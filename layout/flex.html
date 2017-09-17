@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/vue"></script>
+	<!--<script type="text/javascript" src="flex.js"></script>-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="flex.css">
+</head>
+<body>
+<div class="container">
+		<div class="header"></div>
+		<div class ="sidebar">
+		  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrGyK3AKvEpWW5qGJWbwX9b6nu59E8b7lQr-srC-bSdvwZ_2N8IgZSQ">
+      <span class="name">{{name}}</span>
+      <br />
+      <span class="moto">{{msg}}</span>
+      <hr class="firsthr hr"/>
+      <br />
+      <span class="discription">
+        {{disMsg}}
+      </span>
+      <hr class="secondhr hr"/>
+      <br />
+      <button class="btn">{{blog}}</button>
+      <button class="btn">{{project}}</button>
+		</div>
+		<div class="content">
+      <h2 id="blogTitle" v-bind:style="blogTitle"><a :href="blogPost" @mouseover="changeColor()">{{title}}</a></h2>
+		</div>
+	</div>
+<script>
+var side = new Vue({
+  el:".sidebar",
+  data:{
+    name:"Carol",
+    msg:"Stay hungry, stay foolish.",
+    disMsg:"Carol的前端修行",
+    blog:"Blog",
+    project:"Project",
+  }
+});
+
+
+var articles = new Vue({
+  el:".content",
+  data:{
+    blogPost:"#",
+    title:"CSS flex layout",
+
+  },
+  methods:{
+    changeColor:function(){
+      
+    },
+  }
+});
+</script>
+
+</body>
+</html>
