@@ -10,11 +10,11 @@ function start(router){//在这里传递了一个函数 router 作为参数
 		router(pathname);//js 可以传递函数作为参数,因此不需要 require('./router.js')
 
 		response.writeHead(200,{"Content-type":"text/plain"});
-		response.write("Hello");
+		response.write("Hello"+pathname);
 		response.end();
 	}
 
-	http.createServer(onRequest).listen(8888);
+	http.createServer(onRequest).listen(8880);
 	console.log("Server is working...");
 }
 
