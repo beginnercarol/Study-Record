@@ -11,13 +11,15 @@
 
 	function permutation(arr,begin){
 		var origArr = arr.slice();
+		perm.push(arr.join(""));
 		if(begin===arr.length-1){
 			//结束递归
-			perm.push(origArr.join(""));
+			//perm.push(origArr.join(""));
+			return;
 		}else{
 			for(let i=0;i+begin<origArr.length;i++){//何时将全排列的字符串 push 进 perm 数组?
 				exchange(origArr,begin,begin+i);
-				perm.push(origArr.join(""));
+				//perm.push(origArr.join(""));
 				permutation(origArr,begin+1);
 				exchange(origArr,begin,begin+i);
 			}
@@ -33,6 +35,7 @@
 		return perm;
 	}
 
-	console.log(permAlone('aab'));
+	console.log(permAlone('abcdefa'));
+	console.log(permAlone('abcedfa').length);
 
 })();

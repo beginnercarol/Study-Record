@@ -15,6 +15,11 @@
 
 	}
 
+	function permAlone(str) {
+		var arr = str.split("");
+		
+  		return str;
+	}
 
 
 
