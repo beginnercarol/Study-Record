@@ -1,7 +1,6 @@
 var server = require("./server");
 var router = require("./router");
-var requestHandle = require("./requestHandle");
-
+var requestHandle = require("./requestHandler");
 
 var handler = {};
 handler["/"] = requestHandle.start;
