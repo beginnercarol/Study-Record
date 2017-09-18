@@ -1,10 +1,13 @@
 var url = require("url");
 
-function router (pathname,handler) {
+function router (pathname,handler,response) {
 	if(typeof handler[pathname] === 'function'){
-		 return handler[pathname]();
+		 handler[pathname](response);//Don't forget the "()"!!
 	}else{
-		return "no such handler.";
+		console.log( "no such handler.");
+		response.writeHead(404,{"Content-type":"text/plain"});
+		response.write("404 Not Found");
+		response.end();//结束本次
 	}
 }
 

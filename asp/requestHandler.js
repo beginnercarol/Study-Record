@@ -1,18 +1,22 @@
+var exec  = require("child_process").exec;
 
-function start(){
+function start(response){
 	console.log("RequestHandler 'start' is called.");
-	function sleep(milliseconds){
-		var startTime = new Date().getTime();
-		while((new Date().getTime() - startTime)<milliseconds);
-	}
-	sleep(10000);
-	return "hello,start!";
+	
+	exec("ls -lah",function(error,stdout,stderr){
+		response.writeHead(200,{"Content-type":"text/plain"});
+		response.write(stdout);
+		response.end();
+	});
+	//return "hello,start!";
 }
 
 
-function upload(){
+function upload(response){
 	console.log("RequestHandler 'upload' is called.");
-	return "Hello,upload!";
+	response.writeHead(200,{"Content-type":"text/plain"});
+	response.write("Hello,upload");
+	response.end();
 }
 
 

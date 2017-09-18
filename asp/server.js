@@ -7,11 +7,11 @@ function start(router,handler){//在这里传递了一个函数 router 作为参
 		var pathname = url.parse(request.url).pathname;
 		console.log("Request for:"+pathname+" received.");
 
-		var content = router(pathname,handler);//js 可以传递函数作为参数,因此不需要 require('./router.js')
+		router(pathname,handler,response);//js 可以传递函数作为参数,因此不需要 require('./router.js')
 
-		response.writeHead(200,{"Content-type":"text/plain"});
+		/**response.writeHead(200,{"Content-type":"text/plain"});
 		response.write("hello "+content);
-		response.end();
+		response.end();**/
 	}
 
 	http.createServer(onRequest).listen(8880);
