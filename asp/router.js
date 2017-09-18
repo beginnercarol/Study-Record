@@ -1,12 +1,11 @@
 var url = require("url");
 
-function router (pathname) {
-	if(pathname=="/index.html"){
-		console.log("Sorry I am not able to send you this by now.");
+function router (pathname,handler) {
+	if(typeof handler[pathname] === 'function'){
+		 return handler[pathname]();
 	}else{
-		console.log("Request for:"+pathname);
+		return "no such handler.";
 	}
-	
 }
 
 
