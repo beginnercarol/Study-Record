@@ -1,8 +1,8 @@
 var url = require("url");
 
-function router (pathname,handler,response) {
+function router (pathname,handler,response,request) {
 	if(typeof handler[pathname] === 'function'){
-		 handler[pathname](response);//Don't forget the "()"!!
+		 handler[pathname](response,request);//Don't forget the "()"!!
 	}else{
 		console.log( "no such handler.");
 		response.writeHead(404,{"Content-type":"text/plain"});
