@@ -11,7 +11,7 @@ function start(router,handler){//在这里传递了一个函数 router 作为参
 
 
 		var postData = "";
-		//request.setEncoding("utf8");formidable 会处理这个 part
+		//request.setEncoding("utf8");//formidable 会处理这个 part
 
 		/**request.addListener("data",function(postDataChunk){
 			postData += postDataChunk;
