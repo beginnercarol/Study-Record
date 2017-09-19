@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HolyGrail Layout</title>
+	<style type="text/css">
+	.{
+		box-sizing:border-box;
+	}
+	body{
+		margin:0;
+		padding:0;
+	}
+	.container{
+		padding-left:200px;
+		padding-right:150px;
+		border:1px solid black;
+	}
+	.column{
+		float:left;
+	}
+	.main{
+		width:100%;
+		background-color:aqua;
+	}
+	.left{
+		width:200px;
+		margin-left:-100%;
+		background-color:yellow;
+		position:relative;
+		left:-200px;
+	}
+	.right{
+		width:150px;
+		margin-left: -150px;
+		background-color:pink;
+		position:relative;
+		right:-150px;
+	}
+	.footer{
+		clear:both;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="main column">main</div>
+		<div class="left column">left</div>
+		<div class="right column">right</div>
+	</div>
+	<div class="footer">footer</div>
+
+</body>
+</html>
