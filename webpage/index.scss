@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Merriweather');
+
+.icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+
+body{
+  margin:0;
+  padding:0;
+}
+
+.slides{
+  position:relative;
+  width:750px;
+  height:1114px;
+  background-size:750px 1114px;
+  background-repeat:no-repeat;
+  font-family:"Merriweather",serif;
+  overflow:hidden;
+  ul{
+    position:relative;
+    margin-left:0;
+    padding-left:0;
+    list-style:none;
+    z-index:-1;
+    width:400%;
+    overflow:hidden;
+    li{
+      float:left;
+    }
+    li img{
+      max-width:750px;
+      height:1114px;
+    }
+  }
+  .text{
+    position:absolute;
+    bottom:200px;
+    margin-left:50px;
+    color:white;
+    
+    section{
+        font-size:6em;
+        font-weight:bold;
+        margin-top:10px;
+    }
+
+    span{
+      font-size:2em;
+      font-weight:thin;  
+    }
+
+  }
+  .btn{
+    position:absolute;
+    bottom:80px;
+    margin-left:50px;
+    display:inline-block;
+    line-height:60px;
+    height:60px;
+    width:156px;
+    background-color:white;
+    border-radius:5px;
+    text-align:center;
+    padding:auto 30px;
+  }
+
+}
+
+
+a[class=btn]{
+  font-family: "Merriweather"; 
+  text-decoration:none;
+  color:black;
+}
+
+.navbar{
+  display:fixed;
+  width:690px;
+  height:120px;
+  background-color:pink;
+  bottom:0;
+  padding:30px;
+  span{
+    float:left;
+    position:relative;
+    top:50%;
+    transform: translate(0,-50%);
+    display:inline-block;
+    line-height:60px;
+    height:60px;
+    width:156px;
+    text-align:center;
+    padding:auto 30px;
+  }
+  .msg{
+    float:right;
+  }
+  .dots{
+    ul{
+      display:block;
+      list-style:none;
+      position:absolute;
+    }
+    ul li{
+      display:inline-block;
+      opacity:0.6;
+      position:relative;
+    }
+    ul li:hover{
+      bottom:2px;
+      opacity:1;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
