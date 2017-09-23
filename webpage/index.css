@@ -80,17 +80,27 @@ a[class=btn] {
     text-align: center;
     padding: auto 30px; }
   .navbar .msg {
-    float: right; }
-  .navbar .dots ul {
-    display: block;
-    list-style: none;
-    position: absolute; }
-  .navbar .dots ul li {
-    display: inline-block;
-    opacity: 0.6;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%); }
+  .navbar .dots {
     position: relative; }
-  .navbar .dots ul li:hover {
-    bottom: 2px;
-    opacity: 1; }
+    .navbar .dots ul {
+      padding: 0;
+      margin: 0;
+      float: left;
+      list-style: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(0, -50%); }
+    .navbar .dots ul li {
+      display: inline-block;
+      opacity: 0.6;
+      position: relative; }
+    .navbar .dots ul li:hover {
+      bottom: 2px;
+      opacity: 1; }
 
 /*# sourceMappingURL=index.css.map */
