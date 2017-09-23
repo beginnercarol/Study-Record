@@ -98,12 +98,23 @@ a[class=btn]{
   }
   .msg{
     float:right;
+    position:relative;
+    top:50%;
+    transform:translate(0,-50%);
   }
   .dots{
+    position:relative;
     ul{
-      display:block;
+      padding:0;
+      margin:0;
+      float:left;
       list-style:none;
       position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(0,-50%);
+     
+      
     }
     ul li{
       display:inline-block;
