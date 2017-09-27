@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+/*.container{
+	width:100%;/* need this div to offer width
+	height:800px;
+	float:left;
+}
+main{
+	height:100%;
+	margin-left:200px;
+	margin-right:150px;
+	background-color:#ddd;
+}
+
+sidebar.left{
+	float:left;
+	width:200px;
+	height:800px;
+	margin-left:-100%;
+	background-color:coral;
+
+}
+
+sidebar.right{
+	float:left;
+	width:150px;
+	height:800px;
+	margin-left:-150px;
+	background-color:yellow;
+}*/
+/* holygrail layout*/
+.container {
+  height: 800px;
+  /*width:100%;*/
+  /*Why add this would make main' width larger?*/
+  padding-left: 200px;
+  padding-right: 150px; }
+
+main {
+  float: left;
+  height: 800px;
+  width: 100%;
+  background-color: #ddd; }
+
+sidebar.left {
+  float: left;
+  position: relative;
+  margin-left: -200px;
+  left: -200px;
+  width: 200px;
+  height: 800px;
+  background-color: yellow; }
+
+sidebar.right {
+  float: left;
+  /*margin-left:-150px;*/
+  height: 800px;
+  width: 150px;
+  background-color: blue; }
+
+/*# sourceMappingURL=doubleWin.css.map */

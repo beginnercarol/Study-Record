@@ -1,0 +1,60 @@
+.side_main{
+	h3,h4,,h6{
+		margin:0;
+		padding:0;
+	}
+	h3{
+		
+		display:inline-block;
+		margin-bottom:20px;
+		background-color:#98F5FF;
+		padding:0 50px;
+	}
+	.experience_details{
+		text-indent:20px;
+		h4{font-size:200%;}
+		span{
+			font-size: 50%;
+			margin-left:5px;
+		}
+	}
+	h3.clr2{
+		background-color:yellow;
+	}
+	p.exp1{
+		color:#999;
+		border-bottom:3px dashed #999;
+		padding-bottom:20px;
+	}
+
+
+	.skills{
+		.skill_list{
+			vertical-align: top;
+
+		}
+		
+		.skill1,.skill2{
+			display:inline-block;
+			vertical-align: top;
+			margin-left:50px;
+
+		}
+	}
+	.hobbies{
+		text-indent:20px;
+		h3.clr3{
+			margin-left:-20px;
+		}
+		h4{
+			font-size: 150%;
+		}
+		.hobbies_details{
+			border-bottom:3px dashed #999;
+		}
+		ul{
+			margin-left:50px;
+		}
+
+	}
+}

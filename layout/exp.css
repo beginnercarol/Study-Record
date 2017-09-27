@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+span.modified_radio input {
+  opacity: 0;
+  cursor: pointer;
+  filter: alpha(opacity=0); }
+
+input.moRadio {
+  opacity: 0;
+  cursor: pointer;
+  filter: alpha(opacity=0); }
+
+input.moRadio + span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  text-align: center;
+  background-image: url("../temp/checkbox.png");
+  background-size: 100% 100%;
+  vertical-align: middle; }
+
+input.moRadio:checked + span {
+  /*display:inline-block;
+  width:24px;
+  height:24px;
+  cursor:pointer;
+  text-align:center;*/
+  background-image: url("../temp/checkbox-selected.png");
+  /*background-size:100% 100%;
+  vertical-align:middle;*/ }
+
+/*# sourceMappingURL=exp.css.map */
