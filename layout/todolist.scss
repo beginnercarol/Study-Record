@@ -1,0 +1,170 @@
+html{
+	width:100%;
+	height:100%;
+	font-family: 'Encode Sans Expanded',sans-serif;
+	font-family:'Slabo 27px',serif;
+}	
+
+*{
+	padding:0;
+	margin:0;
+}
+.icon{
+	width: 2em;
+	height:2em;
+	vertical-align:-0.15em;
+	fill:currentColor;
+	overflow:hidden;
+}
+
+.dot{
+	display:inline-block;
+	position:relative;
+	height:0;
+	width:0;
+	border-width:5px;
+	border-style:solid;
+	border-color:#ddd;
+	border-radius:5px;
+	margin:3px;
+}
+
+.dot:hover{
+	border-color:gray;
+	bottom:3px;
+}
+
+.ham{
+	display:inline-block;
+	position:absolute;
+	top:10%;
+	right:10%;
+}
+
+header{
+	width:100%;
+	/*height:400px;*/
+	height:0;
+	overflow:hidden;
+	padding-top:40%;
+	position:relative;
+	background:url("../temp/bannerBlueTec.jpg") no-repeat;
+	background-origin:padding-box;
+	/*background-color:pink;*/
+	background-size:100% 100%;
+	.obscureTri{
+		position:absolute;
+		top:10%;
+		left:10%;
+		height:0;
+		width:0;
+		font-size: 0;
+		line-height:0;
+		border-width:5px 10px;
+		border-style:solid;
+		border-color:transparent white transparent transparent;
+	}
+	.tri1{
+
+	}
+
+}
+.side_main{
+	width:60%;
+	height:100%;
+	margin:0 auto;
+}
+
+
+main{
+	display:grid;
+	width:100%;
+	height:1000px;
+	background:url("../temp/pattern.png") center fixed;
+	grid-template-columns:1fr;
+	grid-template-rows:1fr 1fr;
+}
+
+.gridBox{
+	box-sizing:border-box;
+	display:grid;
+	padding:20px 30px;  
+	width:100%;
+	height:100%;
+	grid-template-columns:1fr;
+	grid-template-rows:1fr 2fr 2fr 2fr;
+	font-family:'Slabo 27px';
+	color:black;
+	.task{
+		span{
+			line-height:100%;
+		}
+	}
+	
+}
+
+.gridBox div:first-child{
+	font-family:'Encode Sans Expanded';
+	color:gray;
+}
+
+.box1{
+	background-color:#fff;
+}
+.box3{
+	background-color:#999;	
+}
+.box5{
+	background-color:#fff;	
+}
+.box2,.box4,.box6{
+	background-color:transparent;
+}
+.task{
+	span,input,svg{
+		display:inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+
+.on{
+	background-image:url("../temp/checkbox-selected.png");
+	background-size:100% 100%;
+}
+
+div.task{
+	input.invisible_checkbox{
+		opacity:0;
+		cursor:pointer;
+		filter:alpha(opacity=0);
+	}
+	input.invisible_checkbox + span{
+		display:inline-block;
+		height:24px;
+		width:24px;
+		cursor:pointer;
+		background-image:url("../temp/checkbox.png") ;
+		background-size:100% 100%;
+		vertical-align:middle;
+	}
+	input.invisible_checkbox:checked + span{
+		display:inline-block;
+		height:24px;
+		width:24px;
+		cursor:pointer;
+		background-image:url("../temp/checkbox-selected.png") ;
+		background-size:100% 100%;
+		vertical-align:middle;
+	}
+
+}
+
+
+
+
+
+
+
+

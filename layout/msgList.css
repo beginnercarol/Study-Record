@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden; }
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: pink; }
+
+h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
+.per {
+  width: 100%; }
+  .per .img-equal {
+    float: left;
+    position: relative;
+    width: 20%;
+    height: 0;
+    padding-top: 20%;
+    margin-right: 5%; }
+  .per .touxiang {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; }
+  .per .contentOfComment {
+    margin-top: 5%;
+    width: 75%;
+    float: left;
+    position: relative; }
+    .per .contentOfComment .person {
+      float: left;
+      margin-left: 10%; }
+    .per .contentOfComment time {
+      float: right;
+      top: 0;
+      right: 0;
+      margin-right: 20%; }
+    .per .contentOfComment p {
+      clear: both;
+      text-align: justify; }
+
+nav.bottomNav {
+  position: fixed;
+  margin: 0 10%;
+  /*why auto doesn't work*/
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 100px;
+  background-color: #ddd;
+  text-align: center; }
+  nav.bottomNav ul {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    list-style: none;
+    position: relative; }
+    nav.bottomNav ul li {
+      display: inline-block;
+      position: relative; }
+    nav.bottomNav ul li:hover {
+      opacity: 0.8;
+      bottom: 0.05em; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+/*# sourceMappingURL=msgList.css.map */

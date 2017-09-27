@@ -55,8 +55,8 @@ main{
   margin-right:0.5%;
   margin-bottom:0.5%;
   overflow:scroll;
-  ul{
-    list-style:indent;
+  ul,ol{
+    list-style:inside;
   }
 }
 
