@@ -17,6 +17,13 @@ html{
 	overflow:hidden;
 }
 
+
+.container{
+	width:60%;
+	height:100%;
+	margin:0 auto;
+}
+
 .dot{
 	display:inline-block;
 	position:relative;
@@ -40,6 +47,7 @@ html{
 	top:10%;
 	right:10%;
 }
+
 
 header{
 	width:100%;
@@ -69,11 +77,7 @@ header{
 	}
 
 }
-.side_main{
-	width:60%;
-	height:100%;
-	margin:0 auto;
-}
+
 
 
 main{
@@ -129,37 +133,38 @@ main{
 
 
 
-.on{
+/*.on{
 	background-image:url("../temp/checkbox-selected.png");
 	background-size:100% 100%;
+}*/
+
+
+
+input.invisible_checkbox{
+	opacity:0;
+	cursor:pointer;
+	filter:alpha(opacity=0);
+}
+input.invisible_checkbox + span{
+	display:inline-block;
+	height:24px;
+	width:24px;
+	cursor:pointer;
+	background-image:url("../temp/checkbox.png");
+	background-size:100% 100%;
+	vertical-align:middle;
+}
+input.invisible_checkbox:checked + span{
+	display:inline-block;
+	height:24px;
+	width:24px;
+	cursor:pointer;
+	background-image:url("../temp/checkbox-selected.png");
+	background-size:100% 100%;
+	vertical-align:middle;
 }
 
-div.task{
-	input.invisible_checkbox{
-		opacity:0;
-		cursor:pointer;
-		filter:alpha(opacity=0);
-	}
-	input.invisible_checkbox + span{
-		display:inline-block;
-		height:24px;
-		width:24px;
-		cursor:pointer;
-		background-image:url("../temp/checkbox.png") ;
-		background-size:100% 100%;
-		vertical-align:middle;
-	}
-	input.invisible_checkbox:checked + span{
-		display:inline-block;
-		height:24px;
-		width:24px;
-		cursor:pointer;
-		background-image:url("../temp/checkbox-selected.png") ;
-		background-size:100% 100%;
-		vertical-align:middle;
-	}
 
-}
 
 
 
