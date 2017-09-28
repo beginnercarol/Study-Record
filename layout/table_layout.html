@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Table</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+ <style>
+		*{
+		  padding:0;
+		  margin:0;
+		}
+		html{
+		  width:100%;
+		  height:100%;
+		}
+
+
+		table{
+		  border-collapse: collapse;
+		  border:2px solid #ddd;
+		}
+		td,th{
+		  border: 1px solid #ddd;
+		  padding:10px 20px;
+		}		
+    </style>
+</head>
+<body>
+     <table>
+   	<caption>Data about the planets of our solar system (Planetary facts taken from Nasa's Planetary Fact Sheet - Metric.</caption>
+   	<colgroup>
+   		<col span="2">
+   		<col style="border: 2px solid black;">
+   	</colgroup>
+   	<thead>
+   		<tr>
+   			<th scope="col" colspan="2">&nbsp</th>
+   			<th scope="col">Name</th>
+   			<th scope="col">Mass</th>
+   			<th scope="col">Diameter</th>
+   			<th scope="col">Density</th>
+   			<th scope="col">Gravity</th>
+   			<th scope="col">Length</th>
+   			<th scope="col">Mean temperature</th>
+   			<th scope="col">Number of moon</th>
+   			<th scope="col">Notes</th>
+   		</tr>
+   	</thead>
+   	<tbody>
+   		<tr>
+   			<th scope="rowgroup" rowspan="4" colspan="2">Terrestial planets</th>
+   			<td>1</td>
+   			<td>2</td>
+   			<td>3</td>
+   			<td>4</td>
+   			<td>5</td>
+   			<td>6</td>
+   			<td>7</td>
+   			<td>7</td>
+   			<td>9</td>
+   		</tr>
+   		<tr>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   		<tr>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   		<tr>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   		<tr>
+   			<th scope="rowspan" colspan="1"rowspan="4">Jovian planets</th>
+   			<th scope=="rowspan" rowspan="2">Gas giants</th>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   		<tr>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   		<tr>
+   			<th scope="row" rowspan="2">Ice giants</th>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   
+   	<!--<th id="nested" colspan="2"rowspan="4">
+   		<table id="head2">
+   			<tr>
+   				<th scope="rowspan" rowspan="4">Jovian planets</th>
+   				<th scope="rowspan" rowspan="2">Gas giants</th>
+   			</tr>
+   			<tr>
+   				<th scope="rowspan" rowspan="2">Ice giants</th>
+   			</tr>
+   		</table>
+   	</th>-->
+   	<tr>
+   		<td scope="row">1</td>
+   		<td scope="row">2</td>
+   		<td scope="row">3</td>
+		<td scope="row">4</td>
+		<td scope="row">5</td>
+		<td scope="row">6</td>
+		<td scope="row">7</td>
+		<td scope="row">7</td>
+		<td scope="row">9</td>
+   	</tr>
+   	
+   		<tr>
+   			<th scope="row" colspan="2">Dwarf planets</th>
+   			<td scope="row">1</td>
+   			<td scope="row">2</td>
+   			<td scope="row">3</td>
+   			<td scope="row">4</td>
+   			<td scope="row">5</td>
+   			<td scope="row">6</td>
+   			<td scope="row">7</td>
+   			<td scope="row">7</td>
+   			<td scope="row">9</td>
+   		</tr>
+   	</tbody>
+   </table>
+</body>
+</html>
