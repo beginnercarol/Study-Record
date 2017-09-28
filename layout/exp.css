@@ -36,4 +36,25 @@ input.moRadio:checked + span {
   /*background-size:100% 100%;
   vertical-align:middle;*/ }
 
+input.invisible_checkbox + span {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  background-image: url("../temp/checkbox.png");
+  background-size: 100% 100%;
+  vertical-align: middle; }
+
+input.invisible_checkbox:checked + span {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  background-image: url("../temp/checkbox-selected.png");
+  background-size: 100% 100%;
+  vertical-align: middle; }
+
+input.invisible_checkbox {
+  display: none; }
+
 /*# sourceMappingURL=exp.css.map */

@@ -15,6 +15,11 @@ html {
   fill: currentColor;
   overflow: hidden; }
 
+.container {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto; }
+
 .dot {
   display: inline-block;
   position: relative;
@@ -59,11 +64,6 @@ header {
     border-style: solid;
     border-color: transparent white transparent transparent; }
 
-.side_main {
-  width: 60%;
-  height: 100%;
-  margin: 0 auto; }
-
 main {
   display: grid;
   width: 100%;
@@ -105,15 +105,16 @@ main {
   display: inline-block;
   vertical-align: middle; }
 
-.on {
-  background-image: url("../temp/checkbox-selected.png");
-  background-size: 100% 100%; }
-
-div.task input.invisible_checkbox {
+/*.on{
+	background-image:url("../temp/checkbox-selected.png");
+	background-size:100% 100%;
+}*/
+input.invisible_checkbox {
   opacity: 0;
   cursor: pointer;
   filter: alpha(opacity=0); }
-div.task input.invisible_checkbox + span {
+
+input.invisible_checkbox + span {
   display: inline-block;
   height: 24px;
   width: 24px;
@@ -121,7 +122,8 @@ div.task input.invisible_checkbox + span {
   background-image: url("../temp/checkbox.png");
   background-size: 100% 100%;
   vertical-align: middle; }
-div.task input.invisible_checkbox:checked + span {
+
+input.invisible_checkbox:checked + span {
   display: inline-block;
   height: 24px;
   width: 24px;
