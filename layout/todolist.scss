@@ -21,6 +21,7 @@ html{
 .container{
 	width:60%;
 	height:100%;
+	position:relative;
 	margin:0 auto;
 }
 
@@ -60,25 +61,33 @@ header{
 	background-origin:padding-box;
 	/*background-color:pink;*/
 	background-size:100% 100%;
-	.obscureTri{
+
+	svg{
 		position:absolute;
+	}
+	#icon_backward{
+		
 		top:10%;
 		left:10%;
-		height:0;
-		width:0;
-		font-size: 0;
-		line-height:0;
-		border-width:5px 10px;
-		border-style:solid;
-		border-color:transparent white transparent transparent;
 	}
-	.tri1{
+	#icon_function{
 
+		top:10%;
+		right:10%;
 	}
+	
 
 }
 
-
+#icon_add{
+	width:3em;
+	height:3em;
+	position:absolute;
+	/*top:40%;*/
+	right:10%;
+		z-index:10;
+		transform: translate(0,-50%);
+	}
 
 main{
 	display:grid;
@@ -99,6 +108,8 @@ main{
 	grid-template-rows:1fr 2fr 2fr 2fr;
 	font-family:'Slabo 27px';
 	color:black;
+	box-shadow:inset 0 3px 2px rgba(0,0,0,0.5),
+	inset 0 -3px 2px rgba(0,0,0,0.5);
 	.task{
 		span{
 			line-height:100%;
@@ -165,11 +176,18 @@ input.invisible_checkbox:checked + span{
 }
 
 
+.gridBox svg{
+	/*margin-right:20%;*/
+}
+
+.gridBox label{
+	margin:0 10% 0 5%;
+}
 
 
 
-
-
-
+.task:after{
+	content:"";
+}
 
 

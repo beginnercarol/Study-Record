@@ -6,55 +6,44 @@ html {
   width: 100%;
   height: 100%; }
 
-span.modified_radio input {
-  opacity: 0;
-  cursor: pointer;
-  filter: alpha(opacity=0); }
+.container {
+  margin: 8% auto;
+  width: 50%;
+  position: relative;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  line-height: 300px; }
 
-input.moRadio {
-  opacity: 0;
-  cursor: pointer;
-  filter: alpha(opacity=0); }
-
-input.moRadio + span {
+p {
+  box-sizing: border-box;
+  padding: 20px;
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  text-align: center;
-  background-image: url("../temp/checkbox.png");
-  background-size: 100% 100%;
+  /*position:absolute;
+  left:30%;*/
+  width: 80%;
+  word-wrap: break-word;
+  overflow: hidden;
+  line-height: 1em;
   vertical-align: middle; }
 
-input.moRadio:checked + span {
-  /*display:inline-block;
-  width:24px;
-  height:24px;
-  cursor:pointer;
-  text-align:center;*/
-  background-image: url("../temp/checkbox-selected.png");
-  /*background-size:100% 100%;
-  vertical-align:middle;*/ }
+img {
+  /* display:inline-block;*/
+  width: 18%;
+  /*height:20%;*/
+  border-radius: 50%;
+  vertical-align: middle;
+  /*transform:translate(0,-50%);*/ }
 
-input.invisible_checkbox + span {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-  background-image: url("../temp/checkbox.png");
-  background-size: 100% 100%;
-  vertical-align: middle; }
-
-input.invisible_checkbox:checked + span {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-  background-image: url("../temp/checkbox-selected.png");
-  background-size: 100% 100%;
-  vertical-align: middle; }
-
-input.invisible_checkbox {
-  display: none; }
+.container::before {
+  content: '';
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border-width: 10px;
+  border-style: dashed dashed solid;
+  border-color: transparent transparent #ddd;
+  position: absolute;
+  top: -20px;
+  left: 50%; }
 
 /*# sourceMappingURL=exp.css.map */
