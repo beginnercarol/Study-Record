@@ -1,11 +1,11 @@
 /* General setup */
 /*
-font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab', serif;
   font-family: 'Germania One', cursive;
   font-family: 'Raleway', sans-serif;
   font-family: 'Pangolin', cursive;*/
 * {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   font-size:10px;
   font-family: 'Roboto Slab', serif;
 
@@ -16,7 +16,6 @@ body {
   min-width: 1000px;
   max-width: 1400px;
   line-height: 1.5rem;
-
   letter-spacing: 0;
   word-spacing: 0.2rem;
 }
@@ -80,7 +79,8 @@ a{
   color:blue;
   background:url("../temp/external-link-52.png") no-repeat;
   background-size: 16px 16px;
-  background-origin: 80% 0;
+  background-position: 100% 0;
+  padding-right:20px;
 }
 
 a:link{
@@ -110,4 +110,12 @@ a:active{
 ul{
   list-style-image: 
 }
+
+/*p{
+  border:30px dotted black;
+  border-image:url("../temp/border-image.png");
+  border-image-slice:40;
+  border-image-repeat:space;
+  border-image-outset:1.6rem;  
+}*/
 
