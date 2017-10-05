@@ -5,12 +5,13 @@ $(document).ready(function(){
 
 	var imgs = 	document.querySelectorAll(".imgs ul li img");
 
-	var width = document.querySelector(".imgs ul li img").width;
-	console.log(width);	
+	//var width = document.querySelector(".imgs ul li img").width;
+	//console.log(width);	
 
 
 	function changePic(index){
 		return function(){
+			var width = document.querySelector(".imgs ul li img").width;
 			var dis = -width*index;
 			console.log(dis);
 			pic.style.left = dis + "px";//dis;
