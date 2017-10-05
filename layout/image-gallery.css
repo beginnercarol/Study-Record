@@ -1,0 +1,55 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.container{
+	width:80%;
+	height:700px;
+	margin:0 auto;
+}
+.container .imgs{
+	width:100%;
+	overflow:hidden;/*注意到底是谁 overflow 了*/
+	box-shadow: 1px 1px 3px black,
+	1px -1px 3px black;
+}
+
+.container .imgs ul{
+	list-style:none;
+	width:400%;
+	position:relative;
+}
+
+.container .imgs ul li{
+	display:inline-block;
+	width:25%;
+	
+}
+
+.container .imgs ul li img{
+	width:100%;
+	float:left;
+
+}
+
+.control ul{
+	list-style:none;
+	width:100%;
+	overflow:hidden;
+}
+
+.control ul li{
+	display:inline-block;
+	width:25%;
+}
+
+.control ul li img{
+	width:100%;
+	height:100px;
+}
+
+.active{
+	box-shadow: 
+}
+
