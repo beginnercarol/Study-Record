@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Hotel</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+    <nav class="clearfix">
+		<svg class="icon backward" aria-hidden="true">
+			<use href="#icon-back" ></use>
+		</svg>
+
+		<svg class="icon search" aria-hidden="true">
+			<use href="#icon-search"></use>
+		</svg>
+    </nav>
+    <main>
+    	<figure>
+    		<div class="imgContainer">
+    		<img src="../src/touxiang.jpg" alt="the water club" />
+    	</div>
+    	<figcaption>The Water Club</figcaption>
+    	</figure>
+
+		<div class="reservation">
+			<span>Table For</span>
+			<br />
+			<label for="btn-minus">
+			<input type="button" id="btn-minus" class="minus" value="-"></input><span>
+				<svg class="icon" aria-hidden="true">
+					<use href="#icon-subtract"></use>
+				</svg>
+			</span></label>
+
+			<div class="person">&nbsp</div>
+
+			<label for="btn-add">
+			<input type="button" id="btn-add" class="add" value="+"></input><span>
+				<svg class="icon" aria-hidden="true">
+					<use href="#icon-add"></use>
+				</svg>
+			</span></label>
+		</div>
+
+		<div class = "date">
+			<span>Choose Date & Time</span>
+			<br />
+			<select class="day" name="day">
+				<option value="1">01</option>
+				<option value="2">02</option>
+				<option value="3">03</option>
+				<option value="4">04</option>
+				<option value="5">05</option>
+				<option value="6">06</option>
+			</select>
+			<select class="month" name="month">
+				<option value="1">JAN</option>
+				<option value="2">FEB</option>
+				<option value="3">MARCH</option>
+				<option value="4">APRIAL</option>
+				<option value="5">MAY</option>
+				<option value="6">JUNE</option>
+				<option value="7">JULY</option>
+				<option value="8">AUGUST</option>
+				<option value="9">SEPTEMB</option>
+				<option value="10">OCTOBER</option>
+				<option value="11">NOVEMBER</option>
+				<option value="12">DECEMBER</option>
+			</select>
+		</div>
+		<label for="confirmBtn">
+		<input type="button" id="confirmBtn" class="confirm" value="confirm" /><span>CONFIRM</span></label>
+	</main>
+</div>
+
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery
+/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="http://at.alicdn.com/t/font_434549_ev2vbwkm5n8c9pb9.js"></script>
+</body>
+</html>

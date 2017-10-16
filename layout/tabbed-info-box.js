@@ -10,8 +10,8 @@ for(var i=0;i<tabs.length;i++){
   tabs[i].addEventListener('click',changeTab(index));
   
 }
-function hasClass(index,className){
-	var class_name = tabSec[index].className;
+function hasClass(index,className,element){
+	var class_name = element[index].className;
 	var class_name_list = class_name.split(" ");
 	for(var i=0;i<class_name_list.length;i++){
 		if(class_name_list[i]==className){
@@ -21,12 +21,13 @@ function hasClass(index,className){
 		}
 	}
 }
-function removeClass(index,className){
-	var class_name = tabSec[index].className;
+
+function removeClass(index,className,element){
+	var class_name = element[index].className;
 	var class_name_list = class_name.split(" ");
 	var idx = class_name_list.indexOf(className);
 	class_name_list.splice(idx,1);
-	tabSec[index].className = class_name_list.join(" ");
+	element[index].className = class_name_list.join(" ");
 }
 
 function changeTab(index){
@@ -34,17 +35,16 @@ function changeTab(index){
   	return function changeTabSec(){
 	  for(var i=0;i<tabs.length;i++){
 	  	var temp = i;
-	    if(hasClass(temp,"active")){
-	      removeClass(temp,"active");
+	    if(hasClass(temp,"active-sec",tabSec)){
+	      removeClass(temp,"active-sec",tabSec);
+	    }
+	    if(hasClass(temp,"active",tabs)){
+	    	removeClass(temp,"active",tabs);
 	    }
 	  }
-	  tabSec[index].setAttribute("class","active");
+	  tabSec[index].setAttribute("class","active-sec");
+	  tabs[index].setAttribute("class","active");
 	}
 }
-
-
-
-
-
 
 });

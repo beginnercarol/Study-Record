@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var tabs = document.querySelectorAll(".control ul li");
 
-	var pic = document.querySelector(".imgs ul");
+	var imgSlider = document.querySelector(".imgs ul");
 
 	var imgs = 	document.querySelectorAll(".imgs ul li img");
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
 			var width = document.querySelector(".imgs ul li img").width;
 			var dis = -width*index;
 			console.log(dis);
-			pic.style.left = dis + "px";//dis;
+			imgSlider.style.left = dis + "px";//dis;
 		}
 	}
 
@@ -23,10 +23,5 @@ $(document).ready(function(){
 		var temp = i;
 		tabs[i].addEventListener('click',changePic(temp));
 	}
-
-
-
-
-
 
 });

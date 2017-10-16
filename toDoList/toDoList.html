@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>To do list</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="toDoList.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<nav class="clearfix">
+	<div class="filter"></div>
+	<svg id="icon_backward" class="icon" aria-hidden="true">
+		<use href="#icon-backward"></use>
+	</svg>
+
+	<svg id="icon_function" class="icon" aria-hidden="true">
+		<use href="#icon-function"></use>
+	</svg>
+</nav>
+<main>
+	<div id="addBtn">
+		<svg id="icon_function" class="icon" aria-hidden="true">
+		<use href="#icon-add1-copy"></use>
+	</svg>
+	</div>
+	<!--<div id="addTask">-->
+		<div id="addTask">
+			<fieldset>
+				<legend>Task</legend>
+				<input type="textarea" name="taskContent" required/>
+				<input type="submit" value="Add" />
+				<label>Choose a type</label>
+			</fieldset>
+		</div>
+	<!--</div>-->
+
+
+	<div id="taskContainer">
+		<div class="task">
+			<!--<label>-->
+			<label>
+				<input type="checkbox" class="finishedTask" />
+				<span></span>
+			</label>
+			<!--</label>-->
+			<div class="task-details">
+			<!--<svg class="icon">
+  <use href="#icon-pisa"></use>
+</svg>-->
+<img src="../src/yinliao.png" alt="drink" />
+			<span class="taskContenet">Do housework
+				</span>
+				<span>Do in dertails</span>
+		</div>
+		</div>
+	</div>
+	
+
+</main>
+
+
+</div>
+
+
+<script type="text/javascript" src="http://at.alicdn.com/t/font_428370_5oke0r1mtzlivn29.js"></script>
+<script type="text/javascript" src="toDoList.js"></script>
+    
+</body>
+</html>
