@@ -1,0 +1,149 @@
+*{
+	padding: 0;
+	margin:0;
+	font-size: 16px;
+	box-sizing:border-box;
+}
+
+
+.icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+}
+
+
+.container{
+	width:50%;
+	margin:0 auto;
+	background: #FFFAF0;
+	padding:20px;
+}
+
+
+nav{
+	width:100%;
+	display:block;
+	padding:20px;
+}
+
+nav svg{
+	font-size: 2rem;
+	color:#CCC;
+}
+
+
+
+.clearfix:after{
+	content:'';
+	display:block;
+	clear:both;
+	height:0;
+	line-height: 0;
+	font-size: 0;
+	
+}
+.clearfix{
+	zoom:1;
+}
+
+nav svg:nth-child(1){
+	float:left;
+}
+nav svg:nth-child(2){
+	float:right;
+}
+
+
+main{
+	position:relative;
+
+}
+main figure{
+	position:relative;
+	text-align:center;
+}
+main figure .imgContainer{
+	position:relative;
+	margin:0 auto;
+	width:20%;
+	padding-top:20%;
+	height:0;
+	font-size:0;
+	line-height: 0;
+	text-align:center;
+}
+
+main figure .imgContainer img{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	border:5px solid #2F4F4F;
+	border-radius:50%;
+	box-shadow: 0px 3px 3px #828282;
+}
+
+main figure figcaption{
+	padding:10px;
+}
+
+.reservation{
+	text-align: center;
+	padding-top:20px;
+}
+
+.reservation > span {
+	
+}
+
+.reservation input{
+	display:hidden;
+	opacity:0;
+	position:absolute;
+	top:-9999999px;
+	left:-999999999px;
+	filter:alpha(opacity:0);
+}
+
+.reservation .person{
+	display:inline-block;
+
+}
+
+
+.date{
+	text-align: center;
+}
+
+#confirmBtn{
+	position:absolute;
+	top:-9999999px;
+	left:-9999999px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	display:hidden;
+}
+
+label[for="confirmBtn"]{
+	display:block;
+}
+
+label[for="confirmBtn"] span{
+	color:#FFF;
+	text-align:center;
+	margin:20px auto;
+	width:80%;
+	display:block;
+	background:#363636;
+	
+	padding:10px;
+	box-shadow:0px 10px 3px #CCC;
+
+}
+
+
+
+
+

@@ -1,0 +1,16 @@
+*{
+  box-sizing:border-box;
+}
+#container{
+  display:grid;
+  width:500px;
+  height:500px;
+  grid-template-rows:repeat(10,1fr);
+  grid-template-columns:repeat(10,1fr);
+}
+
+.cell{
+  border:1px dotted black;
+  border-radius:5px;
+  box-shadow: inset -1px -1px 3px black;
+}
