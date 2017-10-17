@@ -2,16 +2,18 @@
   padding:0;
   margin:0;
   box-sizing:border-box;
+  font-size: 16px;
 }
 .container{
   border:1px dotted transparent;
-  width:70%;
+  width:80%;
   height:800px;
   margin:0 auto;
   position:relative;
   background-image:url("https://images.unsplash.com/photo-1453219562534-36e2ce0ea18e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=02258f9dd9576bb72f05b34cc589df9b");
   background-repeat:no-repeat;
   background-size:100% 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .container:after{
   content:'';
@@ -44,6 +46,11 @@
   margin:0 auto;
   position:relative;
   top:10%;
+  background-image:url("https://images.unsplash.com/photo-1453219562534-36e2ce0ea18e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=02258f9dd9576bb72f05b34cc589df9b");
+  background-position: 50% 50%;
+  background-size:100% 100%;
+  border-radius:2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .location-card .left-content{
@@ -51,17 +58,31 @@
   float:left;
   position:relative;
   width:70%;
+  height:100%;
 }
 .location-card .right-content{
+  color:#CCC;
+  background-color: #FFF;
+  padding:2rem;
   border:1px dotted black;
   float:right;
   position:relative;
   width:30%;
 }
+.location-card .right-content article{
+    background-color: #FFF;
+    text-align:justify;
+  }
 
+  .location-card .right-content p:before{
+    content:'"';
+    font-size:2rem;
+  }
 
 .location-card .left-content h2{
-  position:absolute;
-  left:20px;
-  top:100px;
+  color:white;
+  font-size: 5rem;
+  position:absolute;/*因为是 absolute 所以撑不开*/
+  bottom:8rem;
+  left:6rem;
 }
