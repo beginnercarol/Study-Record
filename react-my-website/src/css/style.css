@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  box-sizing: border-box; }
+
+.container {
+  width: 80%;
+  height: 800px;
+  margin: 0 auto;
+  background-color: #CCC;
+  position: relative; }
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  opacity: 0;
+  line-height: 0;
+  font-size: 0;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+nav {
+  font-size: 0;
+  height: 10%; }
+  nav ul {
+    list-style: none;
+    padding: 20px;
+    width: 100%; }
+    nav ul li {
+      width: calc(100%/3);
+      text-align: center;
+      display: inline-block;
+      font-size: 1rem;
+      float: left; }
+
+main {
+  width: 70%;
+  height: 70%;
+  overflow: scroll;
+  float: right;
+  background-color: coral; }
+
+aside {
+  width: 30%;
+  height: 70%;
+  float: left;
+  background-color: teal; }
+
+/*# sourceMappingURL=style.css.map */
