@@ -7,12 +7,12 @@ import style from '../../css/carousel.css';
 class Carousel extends React.Component {
 	render(){
 		//let {count,items} = this.props;
-		console.log("carousel");
+		console.log(this.props.items);
 		let items  =this.props.items;
 		let count  =items.length;
 		let width = 100*count +"%";
 		return (
-			<div class={style.carousel} >
+			<div className={style.carousel} >
 				<CarouselItems items = {items} count = {count} style={{width:width}}/>
 				<CarouselIndicator count = {count} />
 			</div>	
