@@ -9,11 +9,11 @@ class CarouselItems extends React.Component {
 		let imgList  = [];
 		for(let i=0;i<count;i++){
 			imgList[i] = (
-				<img src={items.src} alt={items.alt} width={{width:width}} />
+				<img key={'img'+i} src={items[i].src} alt={items[i].alt} width={{width:width}} />
 			);
 		}
 		return (
-			<div class="carousel-items" style={{width:width}}>
+			<div className="carousel-items" style={{width:width}}>
 				{imgList}
 			</div>
 		);

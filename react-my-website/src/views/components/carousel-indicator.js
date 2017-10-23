@@ -3,7 +3,7 @@ import React from 'react';
 
 class CarouselIndicator extends React.Component {
 	handleClick(i){
-		
+
 	}
 
 	render() {
@@ -16,7 +16,7 @@ class CarouselIndicator extends React.Component {
 			);
 		}
 		return (
-			<div class="carousel-indicator">
+			<div className="carousel-indicator">
 				<ul>
 	    			{dotNodes}
     			</ul>

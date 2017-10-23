@@ -8,8 +8,9 @@ import Carousel from '../views/components/carousel';
 import css from '../css/index.css';
 
 
-ReactDOM.render(<Test name="seriously"/>,document.getElementById("root"));
+/*ReactDOM.render(<Test name="seriously"/>,document.getElementById("root"));
 ReactDOM.render(<BlogPost />,document.getElementById("root"));
+*/
 
 
 //clock module
@@ -23,19 +24,19 @@ var intervalId  = setInterval(ticking,1000);
 //轮播组件
 const IMAGE_DATA  =[
 	{
-		src:'../imgs/gallery1.jpg',
+		src:'./src/imgs/gallery1.jpg',
 		alt: 'pic1'
 	},
 	{
-		src:'../imgs/gallery2.jpg',
+		src:'./src/imgs/gallery2.jpg',
 		alt: 'pic2'
 	},
 	{
-		src:'../imgs/gallery3.jpg',
+		src:'./src/imgs/gallery3.jpg',
 		alt: 'pic3'
 	},
 	{
-		src:'../imgs/gallery4.jpg',
+		src:'./src/imgs/gallery4.jpg',
 		alt: 'pic4'
 	}
 	
