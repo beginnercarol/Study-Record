@@ -1,4 +1,47 @@
+@font-face {
+  font-family: 'source_code_problack';
+  src: url("./fonts/sourcecodepro-black-webfont.woff2") format("woff2"), url("./fonts/sourcecodepro-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'kaushan_scriptregular';
+  src: url("./fonts/kaushanscript-regular-webfont.woff2") format("woff2"), url("./fonts/kaushanscript-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 @keyframes scalable {
+  from {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1); }
+  to {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5); } }
+@-webkit-keyframes scalable {
+  from {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1); }
+  to {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5); } }
+@-moz-keyframes scalable {
+  from {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1); }
+  to {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5); } }
+@-o-keyframes scalable {
   from {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -36,6 +79,7 @@ body, html {
   margin:2% auto;
 }*/
 .dropDiv {
+  font-family: 'kaushan_scriptregular',serif;
   display: block;
   position: fixed;
   background-color: #FFF;
@@ -46,6 +90,9 @@ body, html {
   padding: 10px;
   box-shadow: 0 1px 3px #ccc;
   background-color: #455A64; }
+  .dropDiv a {
+    text-decoration: none;
+    color: inherit; }
 
 ul {
   list-style: none;
@@ -330,37 +377,39 @@ ul {
       border: 2px solid #90A4AE;
       border-radius: 5px;
       vertical-align: middle; }
-  .content .program-details-pics .img-caption {
-    display: inline-block;
-    width: 233px;
-    height: 250px;
-    border: 2px solid #607D8B;
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px; }
-    .content .program-details-pics .img-caption span.head-pic {
-      display: block;
-      width: 80%;
-      height: 0;
-      padding-top: 50%;
-      margin: 0 auto;
-      position: relative; }
-      .content .program-details-pics .img-caption span.head-pic img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        vertical-align: middle; }
-  .content .program-details-pics button.round-btn {
-    border: none;
-    outline: none;
-    background: none;
-    border-radius: 30px;
-    background-color: #455A64;
-    color: #FFF;
-    width: 100px;
-    padding: 10px 20px; }
+  .content .program-details-pics {
+    padding: 4%; }
+    .content .program-details-pics .img-caption {
+      float: left;
+      display: inline-block;
+      width: 230px;
+      height: 250px;
+      border: 2px solid #607D8B;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+      margin: 0 10px 10px 0; }
+      .content .program-details-pics .img-caption span.head-pic {
+        display: block;
+        width: 60%;
+        height: 0;
+        padding-top: 60%;
+        margin: 0 auto;
+        position: relative; }
+        .content .program-details-pics .img-caption span.head-pic img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          vertical-align: middle;
+          border-radius: 50%; }
+      .content .program-details-pics .img-caption div.round-btn {
+        background-color: #78909C;
+        border-radius: 10px;
+        width: 30%;
+        margin: 0 auto;
+        color: #fff; }
 
 .content div:nth-child(2n+1) {
   background-color: #ECEFF1; }
@@ -396,5 +445,11 @@ footer {
     background-image: url("/temp/char.png"); }
   footer ul li:nth-child(3) {
     background-image: url("/temp/email.png"); }
+
+.anchor-fixed {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden; }
 
 /*# sourceMappingURL=exp.css.map */

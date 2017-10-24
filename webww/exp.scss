@@ -1,4 +1,61 @@
+@font-face {
+    font-family: 'source_code_problack';
+    src: url('./fonts/sourcecodepro-black-webfont.woff2') format('woff2'),
+         url('./fonts/sourcecodepro-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('./fonts/kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('./fonts/kaushanscript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 @keyframes scalable{
+  from{
+    transform:scale(1);
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -o-transform:scale(1);
+  }
+  to{
+    transform:scale(1.5);
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -o-transform:scale(1.5);
+  }
+}
+@-webkit-keyframes scalable{
+  from{
+    transform:scale(1);
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -o-transform:scale(1);
+  }
+  to{
+    transform:scale(1.5);
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -o-transform:scale(1.5);
+  }
+}
+@-moz-keyframes scalable{
+  from{
+    transform:scale(1);
+    -webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -o-transform:scale(1);
+  }
+  to{
+    transform:scale(1.5);
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -o-transform:scale(1.5);
+  }
+}
+@-o-keyframes scalable{
   from{
     transform:scale(1);
     -webkit-transform:scale(1);
@@ -43,6 +100,7 @@ body,html{
   margin:2% auto;
 }*/
 .dropDiv{
+    font-family: 'kaushan_scriptregular',serif;
     display:block;
     position:fixed;
     background-color:#FFF;
@@ -53,6 +111,10 @@ body,html{
     padding:10px;
     box-shadow:0 1px 3px #ccc;
     background-color:#455A64;
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 }
 ul{
   list-style:none;
@@ -400,19 +462,22 @@ ul{
   }
 
   .program-details-pics{
+    padding:4%;
     .img-caption{
+      float:left;
       display:inline-block;
-      width:233px;
+      width:230px;
       height:250px;
       border:2px solid #607D8B;
       border-radius:5px;
       text-align:center;
       padding:10px;
+      margin: 0 10px 10px 0;
       span.head-pic{
         display:block;
-        width:80%;
+        width:60%;
         height:0;
-        padding-top:50%;
+        padding-top:60%;
         margin:0 auto;
         position:relative;
         img{
@@ -422,18 +487,17 @@ ul{
           top:0;
           left:0;
           vertical-align: middle; 
+          border-radius:50%;
         }
-      } 
-    }
-    button.round-btn{
-      border:none;
-      outline:none;
-      background:none;
-      border-radius:30px;
-      background-color:#455A64;
-      color:#FFF;
-      width:100px;
-      padding:10px 20px;
+      }
+      div.round-btn{
+          background-color:#78909C;
+          border-radius:10px;
+          width:30%;
+          margin:0 auto;
+          //height:50px;
+          color:#fff;
+      }
     }
   }
 }
@@ -484,8 +548,12 @@ footer{
 }
 
 
-
-
+.anchor-fixed{
+  display:block;
+  position:relative;
+  top:-80px;
+  visibility:hidden;
+}
 
 
 

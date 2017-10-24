@@ -54,6 +54,11 @@ window.onload = function(){
     var intervalId = setInterval(changeSlides,5000);
 
   })();
+
+
+
+
+
     
 }
 
