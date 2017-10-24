@@ -233,7 +233,7 @@ ul {
     text-align: center; }
     .content .program-details h2 {
       text-align: center;
-      padding-bottom: 10px; }
+      padding-bottom: 20px; }
     .content .program-details .wrapper {
       vertical-align: middle;
       display: inline-block;
@@ -260,7 +260,57 @@ ul {
       display: inline-block;
       width: 60%;
       height: 100%;
-      vertical-align: middle; }
+      vertical-align: middle;
+      position: relative;
+      border-top: 1px solid #546E7A;
+      border-bottom: 1px solid #546E7A;
+      padding: 10px; }
+      .content .program-details .text-details:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 0;
+        border-style: solid;
+        border-width: 15px;
+        border-color: transparent transparent #78909C transparent;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -100%);
+        z-index: 1; }
+      .content .program-details .text-details span:first-child {
+        display: inline-block;
+        position: absolute;
+        height: 0;
+        border-style: solid;
+        border-width: 15px;
+        border-color: transparent transparent #ECEFF1 transparent;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -96%);
+        z-index: 2; }
+      .content .program-details .text-details:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        height: 0;
+        border-style: solid;
+        border-width: 15px;
+        border-color: #78909C transparent transparent  transparent;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 100%);
+        z-index: 1; }
+      .content .program-details .text-details span:last-child {
+        display: inline-block;
+        position: absolute;
+        height: 0;
+        border-style: solid;
+        border-width: 15px;
+        border-color: #ECEFF1 transparent transparent transparent;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 96%);
+        z-index: 2; }
     .content .program-details:before {
       content: "";
       display: inline-block;
@@ -302,6 +352,15 @@ ul {
         top: 0;
         left: 0;
         vertical-align: middle; }
+  .content .program-details-pics button.round-btn {
+    border: none;
+    outline: none;
+    background: none;
+    border-radius: 30px;
+    background-color: #455A64;
+    color: #FFF;
+    width: 100px;
+    padding: 10px 20px; }
 
 .content div:nth-child(2n+1) {
   background-color: #ECEFF1; }

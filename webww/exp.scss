@@ -274,7 +274,7 @@ ul{
     
   }
 }
-
+//content
 .content{
   width:80%;
   margin:0 auto;
@@ -286,7 +286,7 @@ ul{
     text-align:center;
     h2{
       text-align:center;
-      padding-bottom:10px;
+      padding-bottom:20px;
     }
 
     .wrapper{
@@ -318,7 +318,61 @@ ul{
       width:60%;
       height:100%;
       vertical-align: middle;
-    
+      position:relative;
+      border-top:1px solid #546E7A;
+      border-bottom:1px solid #546E7A;
+      padding:10px;
+      &:before{
+        content:'';
+        display:inline-block;
+        position:absolute;
+        height:0;
+        border-style:solid;
+        border-width:15px;
+        border-color:transparent transparent #78909C transparent;
+        left:50%;
+        top:0;
+        transform:translate(-50%,-100%);
+        z-index:1;
+      }
+      span:first-child{
+        display:inline-block;
+        position:absolute;
+        height:0;
+        border-style:solid;
+        border-width:15px;
+        border-color:transparent transparent #ECEFF1 transparent;
+        left:50%;
+        top:0;
+        transform:translate(-50%,-96%);
+        z-index:2;
+      }
+      &:after{
+        content:'';
+        display:inline-block;
+        position:absolute;
+        height:0;
+        border-style:solid;
+        border-width:15px;
+        border-color:#78909C transparent transparent  transparent;
+        left:50%;
+        bottom:0;
+        transform:translate(-50%,100%);
+        z-index:1;
+      }
+      span:last-child{
+        display:inline-block;
+        position:absolute;
+        height:0;
+        border-style:solid;
+        border-width:15px;
+        border-color:#ECEFF1 transparent transparent transparent;
+        left:50%;
+        bottom:0;
+        transform:translate(-50%,96%);
+        z-index:2;
+      }
+
     }
 
     &:before{
@@ -369,9 +423,18 @@ ul{
           left:0;
           vertical-align: middle; 
         }
-      }
+      } 
     }
-   
+    button.round-btn{
+      border:none;
+      outline:none;
+      background:none;
+      border-radius:30px;
+      background-color:#455A64;
+      color:#FFF;
+      width:100px;
+      padding:10px 20px;
+    }
   }
 }
 
