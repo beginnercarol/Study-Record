@@ -15,14 +15,47 @@ module.exports={
 			{
 				test:/\.js$/,
 				exclude:/node_modules/,
-				loader:'babel-loader',
-				query:{
+				use:{
+					loader:'babel-loader',
+					options:{
 					presets:['react','latest']
+					}
 				}
 			},
 			{
 				test:/\.css$/,
-				loader:'style-loader!css-loader?modules'
+				//loader:['sass-loader','style-loader','css-loader?modules'],
+				use:[
+					{
+						loader:'style-loader'
+					},
+					{
+						loader:'css-loader',
+						options:{
+							modules: true,
+							localIdentName:'[name]__[local]--[hash:base64:5]'
+						}
+					}
+					]
+			},
+			{
+				test:/\.scss$/,
+				//loader:['sass-loader','style-loader','css-loader?modules'],
+				use:[
+					{
+						loader:'style-loader'
+					},
+					{
+						loader:'css-loader',
+						options:{
+							modules: true,
+							localIdentName:'[name]__[local]--[hash:base64:5]'
+						}
+					},
+					{
+						loader:'sass-loader'
+					}
+				]
 			}
 		]
 	}
