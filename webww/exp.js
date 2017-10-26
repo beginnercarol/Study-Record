@@ -65,14 +65,14 @@ window.onload = function(){
     var myModal = document.querySelector(".myModal");
     var myModalImg = document.querySelector(".myModal img");
     var myModalClose = document.querySelector('.myModal>span');
-    var height = document.querySelector(".worksShow .head-pic").offsetHeight;
+    //var height = document.querySelector(".worksShow .head-pic").offsetHeight;
     var modalBg = document.getElementById("modal-wrap");
     for(let i=0;i<imgModal.length;i++){
         imgModal[i].onclick  = (function(index){
             return (function(event){
                 var imgSrc = event.target.src;
-                var rect = event.target.getBoundingClientRect();
-                myModal.style.setProperty('top',(height*Math.floor(index/2)+height*0.05)+'px');
+                //var rect = event.target.getBoundingClientRect();
+                //myModal.style.setProperty('top',(height*Math.floor(index/2)+height*0.05)+'px');
                 myModal.style.setProperty('display','block');
                 myModalImg.setAttribute('src',imgSrc);
                 //modalBg.style.setProperty('opacity',0.6);
