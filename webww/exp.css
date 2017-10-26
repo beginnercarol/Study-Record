@@ -158,7 +158,7 @@ ul {
   opacity: 0.8; }
 
 .drop-list-down:hover .drop-list-content {
-  height: 400%; }
+  height: 200%; }
 
 .drop-list-down:hover .drop-list-content li:last-child, ul.drop-list-content {
   border-radius: 0 0 4px 4px; }
