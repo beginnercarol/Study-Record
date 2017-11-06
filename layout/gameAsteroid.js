@@ -3,6 +3,7 @@ window.onload = function(){
 	var gameMonitor = {
 		enermyNum : 10,
 		enermySpeed : 1,
+		enermyArr:[],
 	};
 	class Map {
 		init(canvas){
@@ -12,12 +13,12 @@ window.onload = function(){
 			this.height = canvas.height;
 		}
 		clear(){
-			this.ctx.clearReact(0,0,this.width,this.height);
+			this.ctx.clearRect(0,0,this.width,this.height);
 		}
 		render(){
 			this.clear();
 			this.ctx.fillStyle = 'black';
-			this.ctx.fillReact(0,0,this.width,this.height);
+			this.ctx.fillRect(0,0,this.width,this.height);
 		}
 	}
 
@@ -33,28 +34,32 @@ window.onload = function(){
 			this.x += 1;
 			this.y += 1;
 		}
-		clear(){
-			this.
-		}
+		
 		render(){
 
 		}
 	}
 	//生成 enermy 红色的圆环
 	class Enermy{
+		constructor(props){
+			this.x = props.posX;
+			this.y = props.posY;
+		}
 		init(options){
 			this.canvas = options.cav;
 			this.ctx = this.canvas.getContext('2d');
-			this.x = options.pos.x;
-			this.y = options.pos.y;
 			this.r = options.radius;
+			this.speed = options.speed;
 		}
 		update(){
-			this.x += gameMonitor.enermySpeed;
-			this.y += gameMonitor.enermySpeed;
-		}
-		clear(){
-			this.
+			this.x -= this.speed;
+			this.y += this.speed;
+			if(this.x < -this.r){
+				this.x = Math.random() * map.width;
+			}
+			if(this.y > map.height + this.r){
+				this.y = Math.random() * map.height;
+			}
 		}
 		render(){
 			this.ctx.beginPath();
@@ -75,18 +80,34 @@ window.onload = function(){
 		cav,
 		width:500,
 		height:500
-	})
+	});
+	createEnermy();
 
 	function createEnermy(){
-		this.enermyArr = [];
+		//var enermyArr = [];
 		for(let i=0;i<gameMonitor.enermyNum;i++){
-
+			const x = Math.random() * map.width + map.width;
+			const y = Math.random() * map.height;
+			gameMonitor.enermyArr.push(new Enermy({posX:x,posY:y}));
 		}
 	}
 
+	function collision(player,enermy){
 
+	}
+
+	//反复渲染动画
 	(function animate(){
 		map.render();
+		gameMonitor.enermyArr.forEach((obj)=>{
+			obj.init({
+				cav : cav,
+				radius : 10,
+				speed : 1
+			});
+			obj.render();
+			obj.update();
+		});
 		raf(animate);
 	})();
 };
