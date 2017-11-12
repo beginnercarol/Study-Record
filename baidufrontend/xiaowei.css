@@ -1,0 +1,72 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #9E9E9E; }
+  table thead, table td, table th {
+    border: 1px solid #9E9E9E; }
+  table th {
+    background-color: #37474F;
+    text-align: left;
+    color: #FFF; }
+  table tr:last-child {
+    background-color: #9E9E9E; }
+
+.justify-fix {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  line-height: 0; }
+
+body {
+  background-color: #ccc; }
+
+.container {
+  margin: 20px;
+  background-color: #FFF;
+  padding: 10px; }
+  .container ul {
+    list-style: none;
+    padding: 0;
+    text-align: justify; }
+    .container ul a {
+      text-decoration: none;
+      color: #000; }
+    .container ul li {
+      display: inline-block; }
+      .container ul li:first-child {
+        padding-left: 20px; }
+      .container ul li:last-of-type {
+        padding-right: 20px; }
+  .container h3, .container article > p:first-of-type {
+    color: #616161; }
+  .container article {
+    border: 1px solid #9E9E9E;
+    margin: 20px;
+    padding: 10px; }
+    .container article p:last-of-type {
+      text-indent: 2rem; }
+  .container .sidebar {
+    border: 1px solid #9E9E9E;
+    margin: 20px;
+    padding: 10px;
+    text-align: center; }
+    .container .sidebar h2 {
+      text-align: left;
+      border-left: 3px solid #9E9E9E;
+      padding-left: 10px; }
+    .container .sidebar form {
+      display: inline-block;
+      text-align: left; }
+    .container .sidebar input {
+      margin: 10px 0; }
+    .container .sidebar .submit {
+      display: inline-block;
+      width: 100%;
+      background-color: #283593;
+      border-radius: 5px;
+      outline: none;
+      border: 0;
+      color: #FFF;
+      font-size: 1.2rem; }
+
+/*# sourceMappingURL=xiaowei.css.map */
