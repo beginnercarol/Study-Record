@@ -1,3 +1,6 @@
+*{
+	box-sizing:border-box;
+}
 table{
 	width:100%;
 		border-collapse: collapse;
@@ -15,7 +18,16 @@ table{
 		background-color:#9E9E9E;
 	}
 }
-
+.clearfix:after{
+	content:"";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}
 .justify-fix{
 	display:inline-block;
 	width:100%;
@@ -25,48 +37,71 @@ table{
 body{
 	background-color:#ccc
 }
+
 .container{
 	margin:20px;
 	background-color:#FFF;
-	
-	padding:10px;
+	//padding:10px;
+	header{
+		width:100%;
+		height:150px;
+		line-height: 150px;
+		background-color:#1A237E;
+		img{
+			height:100px;
+			vertical-align: middle;
+			margin-left:20px;
+		}
+	}
 	ul{
+		display:inline-block;
+		float:right;
 		list-style: none;
 		padding:0;
-		text-align:justify;
+		text-align:right;
+		margin:0;
 		a{
 			text-decoration:none;
 			color:#000;
+			font-size:1.4rem;
 
 		}
 		li{
 			display:inline-block;
-			
+			padding:0 10px;
+			font-size:1.2rem;
 			&:first-child{
 				padding-left:20px;
 			}
 			&:last-of-type{
-				
 				padding-right:20px;
 			}
 		}
 	}
-	
-	h3,article >p:first-of-type{
-		color:#616161;
+	.mainWrapper{
+		width:100%;
+		float:left;
 	}
-	article{
-		border:1px solid #9E9E9E;
-		margin:20px;
-		padding:10px;
-		p:last-of-type{
-			text-indent:2rem;
+	main{
+		margin-right:220px;
+		h3,article >p:first-of-type{
+			color:#616161;
+		}
+		article{
+			border:1px solid #9E9E9E;
+			margin:20px;
+			padding:10px;
+			p:last-of-type{
+				text-indent:2rem;
+			}
 		}
 	}
-
 	.sidebar{
+		float:left;
+		margin-left:-220px;
+		width:200px;
 		border:1px solid #9E9E9E;
-		margin:20px;
+		margin-top:20px;
 		padding:10px;
 		text-align:center;
 		h2{
@@ -91,11 +126,14 @@ body{
 			color:#FFF;
 			font-size:1.2rem
 		}
-
 	}
 }
 
-
-
-
-
+.footer{
+	width:100%;
+	height:100px;
+	background-color:#1A237E;
+	text-align:center;
+	line-height:100px;
+	
+}
