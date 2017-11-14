@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+   <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script>
+window.onload = function () {
+var btn = document.getElementById("sort-btn");
+  
+  function sortList(){
+    var src = document.getElementById("source");
+    var srcList = src.querySelectorAll("li");
+    var arr = new Array();
+    srcList.forEach((obj)=>{
+      arr.push(obj);
+    });
+   arr.sort(function(a,b){
+      //console.log("sort"+b.querySelector('b'));
+        return b.querySelector('b').innerText - a.querySelector('b').innerText;
+      });
+    
+    return arr;
+   
+  }
+
+  function renderData(srcList){
+     var resort = document.getElementById("resort");
+      var i=1;
+      srcList.forEach((obj)=>{
+        var li = document.createElement("li");
+        li.innerHTML = i++ +": " +obj.innerHTML;
+        //console.log(li);
+        resort.appendChild(li);
+      });
+  }
+
+
+  (function init(){
+    var list = sortList();
+    btn.addEventListener('click',(function(list){
+      return function(){
+        renderData(list);
+      }
+    })(list));
+  })();
+  
+ 
+};
+</script>
+</body>
+</html>
+
+
+
+
