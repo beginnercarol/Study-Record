@@ -1,10 +1,37 @@
 *{
 	box-sizing:border-box;
 }
+.btn{
+	display:inline-block;
+	width:200px;
+	height:50px;
+	border:none;
+	color:#fff;
+	font:1.5rem "Arial","Microsoft YaHei",sans-serif;
+	border-radius:3px;
+	text-align:center;
+}
+.btn-red{
+	background-color:#FF4500;
+}
+.btn-red-border{
+	color:#000;
+	background-color:transparent;
+	border:1px solid #FF4500;
+	border-radius:0;
+}
+.justify-fix{
+	width:100%;
+	height:0;
+	display:inline-block;
+}
+
 .container{
 	width:100%;
 	min-width:1000px;
 }
+
+
 header{
 	width:100%;
 	height:60px;
@@ -146,31 +173,177 @@ main{
 		}
 		}
 		div.part2{
-
-			input.btn{
-				display:inline-block;
-				width:200px;
-				height:50px;
-				border:none;color:#fff;
-				font:1.5rem "Arial","Microsoft YaHei",sans-serif;
-				border-radius:3px;
-			}
-			.btn-red{
-				background-color:#FF4500;
-			}
-
 		}
 		div.imgGallery{
 			font-size:0;
 			width:100%;
 			height:400px;
 			padding:50px;
+			background-color:	#F5DEB3;
 			figure{
+				font-size:1rem;
 				display:inline-block;
 				width:25%;
 				height:300px;
-				border:1px soled #ccc;
+				vertical-align: middle;
+				background-color:	#F5DEB3;
+				margin:0;
+				text-align:center;
+				.wrapper{
+					border:1px solid #ccc;
+					background-color:#fff;
+					display:inline-block;
+					width:80%;
+					height:250px;
+					padding:10px;
+					img{
+						width:100%;
+						height:100%;
+					}
+				}
+				figcaption{
+					width:100%;
+					height:50px;
+					h4,h5{
+						margin:0;
+						text-align:center;
+					}
+					h4{
+						font:1rem "Arial","Microsoft YaHei",sans-serif;
+						
+					}
+					h5{
+						font:0.8rem "Arial","Microsoft YaHei",sans-serif;
+						color:#ccc;
+						
+					}
+				}
+			}
+		}
+		div.bgImg{
+			width:100%;
+			height:400px;
+			font-size:0;
+			.bg{
+				font: 1rem "Arial","Microsoft YaHei",sans-serif;
+				display:inline-block;
+				width:70%;
+				height:100%;
+				background:url('./img/breakfast.jpg') no-repeat center/100%;
+				position:relative;
+				text-align:center;
+				vertical-align:top;
+				.bg-text{
+					display:inline-block;
+					position:absolute;
+					top:50%;
+					left:50%;
+					color:#fff;
+					text-shadow:2px 1px 3px #000
+						;
+					transform:translate(-50%,-50%);
+					p{
+						margin:5px;
+					}
+					p:first-child{
+						font:3rem "Microsoft YaHei",sans-serif;
+					}
+					p:nth-child(2){
+						font:bold 6rem "Microsoft YaHei",sans-serif;
+					}
+					p:nth-child(3){
+						font:bold 2rem "Microsoft YaHei",sans-serif;
+					}
+				}
+			}
+			.activity-info{
+				font: 1rem "Arial","Microsoft YaHei",sans-serif;
+				//font-size:0;
+				display:inline-block;
+				width:30%;
+				height:100%;
+				position:relative;
 				background-color:#fff;
+				padding:10px;
+				//vertical-align: middle;
+				&:before{
+					content:'';
+					display:block;
+					position:absolute;
+					z-index:1;
+					height:0;
+					border-style:solid;
+					border-width:20px 30px;
+					border-color:transparent #fff transparent transparent;
+					top:50%;
+					transform:translateY(-50%);
+					left:-60px;
+				}
+				.info-text{
+					font: 1rem "Arial","Microsoft YaHei",sans-serif;
+					padding:20px;
+					text-align:center;
+					h2>span{
+						color:#FF6347;
+						text-align:center;
+						font-style:italic;
+					}
+					p{
+						text-align:justify;
+						overflow-wrap:break-word;
+					}
+					.btn-red-border{
+						width:100px;
+						font:1rem WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+					}
+				}
+				ul{
+					list-style:none;
+					padding:0;
+					text-align:center;
+					li{
+						display:inline-block;
+						width:16px;
+						height:16px;
+						border:2px solid #ccc;
+						border-radius:10px;
+						margin:5px;
+					}
+				}
+				
+			}
+		}
+		div.details{
+			width:100%;
+			height:400px;
+			display:inline-block;
+			text-align:justify;
+			.detail{
+				display:inline-block;
+				width:30%;
+				height:100%;
+				text-align:center;
+				p{
+					width:100%;
+					font:bold 1rem "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+				}
+			}
+			.detail:first-child{
+					
+			}
+		}
+
+			
+	}
+	.register{
+		width:100%;
+		height:400px;
+		.formRegister{
+			display:inline-block;
+			width:70%;
+			height:100%;
+			form{
+				
 			}
 		}
 	}

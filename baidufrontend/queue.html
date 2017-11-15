@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Queue</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.container{
+		width:50%;
+		margin:0 auto;
+		background-color: #9c9c9c;
+	}
+	.num{
+		display:inline-block;
+		width:50px;
+		height:50px;
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<input id="queue-item" type="text" class="text" >
+	<input type="button" id="left-in" value="left in">
+	<input type="button" id="right-in" value="right in">
+	<input type="button" id="left-out" value="left out">
+	<input type="button" id="right-out" value="right out">
+	<div id="queue">
+		
+	</div>
+</div>
+<script type="text/javascript">
+	window.onload = function(){
+		var num = document.getElementById("queue-item");
+		var value = num.value;
+		var queue = document.getElementById('queue');
+
+		var btnLeftIn = document.getElementById("left-in");
+		var btnRightIn = document.getElementById("right-in");
+		var btnLeftOut = document.getElementById("left-out");
+		var btnRightOut = document.getElementById("right-out");
+
+
+
+		function insertIn(pos){
+			var item = document.createElement("div");
+			value = num.value;
+			console.log(value);
+			item.className = "num";
+			if(value){
+				item.innerText = value;
+			}else{
+				alert("Please input a number!");
+			}
+			if(pos=="left"){
+				queue.insertBefore(item,queue.firstChild);
+			}else if(pos=="right"){
+				queue.appendChild(item);
+			}	
+		}
+		function removeOut(pos){
+			if(pos=="left"){
+				var firstNode = queue.firstChild;
+				if(firstNode){
+					queue.removeChild(firstNode);
+				}
+			}else{
+				var lastNode = queue.lastChild;
+				if(lastNode){
+					queue.removeChild(lastNode);
+				}
+			}
+		}
+
+		
+		btnLeftIn.addEventListener('click',insertIn.bind(null,"left"));
+		btnRightIn.addEventListener('click',insertIn.bind(null,"right"));
+		btnLeftOut.addEventListener('click',removeOut.bind(null,"left"));
+		btnRightOut.addEventListener('click',removeOut.bind(null,"right"));
+	};
+</script>
+</body>
+</html>
