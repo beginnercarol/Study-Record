@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Queue</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.container{
+		width:80%;
+		margin:0 auto;
+		background-color: #ccc;
+	}
+	#visible{
+		width:100%;
+		height:100px;
+	}
+	.box{
+		display:inline-block;
+		vertical-align: bottom;
+		width:30px;
+		margin-right: 10px;
+		box-shadow: 0 0 3px black;
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<input id="inNum" type="text" pattern="[1-9][0-9]|100"  placeholder="Please enter 10~100" />
+		<button name="left-in" id="left-in">Left In</button>
+		<button name="left-in" id="right-in">Right In</button>
+		<button name="left-in" id="left-out">Left Out</button>
+		<button name="left-in" id="right-out">Right Out</button>
+		<div id="visible"></div>
+	</div>
+	
+<script type="text/javascript">
+		console.log("heal");
+		var inNum = document.getElementById("inNum");
+		console.log(inNum);
+		var arr = document.getElementById("visible");
+		var lIn = document.getElementById("left-in");
+		console.log(lIn);
+		var rIn = document.getElementById("right-in");
+		console.log(rIn);
+		var lOut = document.getElementById("left-out");
+		var rOut = document.getElementById("right-out");
+		lIn.addEventListener('click',function(){
+			//console.log("???");
+			if(checkValidity(inNum.value)){
+				leftIn(inNum.value);
+			}
+		});
+		rIn.addEventListener('click',function(){
+			if(checkValidity(inNum.value)){
+				rightIn(inNum.value);
+			}
+		});
+		lOut.addEventListener('click',function(){
+			if(arr.firstChild){
+				arr.removeChild(arr.firstChild);
+			}
+		});
+		rOut.addEventListener('click',function(){
+			if(arr.lastChild){
+				arr.removeChild(arr.lastChild);
+			}
+		});
+		function checkValidity(num){
+			if(num>=10 && num<=100){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		function leftIn(num){
+			arr.insertBefore(createEle(num,"box"),arr.firstChild);
+		}
+		function rightIn(num){
+			arr.appendChild(createEle(num,"box"));
+		}
+		function leftOut(){
+			arr.removeChild(arr.firstChild);	
+		}
+		function rightOut(){
+			arr.removeChild(arr.lastChild);	
+		}
+		function createEle(num,type){
+			var newEle = document.createElement("div");
+			newEle.className = "box";
+			newEle.style.setProperty("height",num+"px");
+			return newEle;
+		}
+
+		function bubble(queue){
+			var nodes = arr.childNodes;
+			var arr = [];
+			for(node in nodes){
+				arr.push(node.height);
+				console.log(arr);
+			}
+		}
+	
+
+</script>   
+</body>
+</html>
