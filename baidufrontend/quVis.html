@@ -8,6 +8,7 @@
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
 <style type="text/css">
+
 	.container{
 		width:80%;
 		margin:0 auto;
@@ -24,6 +25,10 @@
 		margin-right: 10px;
 		box-shadow: 0 0 3px black;
 		background-color: red;
+		transition: height 1s;
+		-webkit-transition: height background-color 1s;
+		-moz-transition: height background-color 1s;
+		-o-transition: height background-color 1s;
 	}
 </style>
 </head>
@@ -34,20 +39,29 @@
 		<button name="left-in" id="right-in">Right In</button>
 		<button name="left-in" id="left-out">Left Out</button>
 		<button name="left-in" id="right-out">Right Out</button>
-		<div id="visible"></div>
+		<button name="sort" id="sortBubble">Sort</button>
+		<div id="visible">
+			<div class="box" style="height:79px">??</div>
+			<div class="box" style="height:55px"></div>
+			<div class="box" style="height:68px"></div>
+			<div class="box" style="height:99px"></div>
+		</div>
 	</div>
+	
 	
 <script type="text/javascript">
 		console.log("heal");
 		var inNum = document.getElementById("inNum");
-		console.log(inNum);
+		//console.log(inNum);
 		var arr = document.getElementById("visible");
+		console.log(arr.children)
 		var lIn = document.getElementById("left-in");
-		console.log(lIn);
+		//console.log(lIn);
 		var rIn = document.getElementById("right-in");
-		console.log(rIn);
+		//console.log(rIn);
 		var lOut = document.getElementById("left-out");
 		var rOut = document.getElementById("right-out");
+		var sortBubble = document.getElementById("sortBubble");
 		lIn.addEventListener('click',function(){
 			//console.log("???");
 			if(checkValidity(inNum.value)){
@@ -60,15 +74,34 @@
 			}
 		});
 		lOut.addEventListener('click',function(){
-			if(arr.firstChild){
-				arr.removeChild(arr.firstChild);
+			if(arr.children.length>0){
+				console.log(arr.children[0].innerText);
+				alert(arr.children[0].style.height);
+				var node = arr.removeChild(arr.children[0]);
 			}
 		});
 		rOut.addEventListener('click',function(){
 			if(arr.lastChild){
-				arr.removeChild(arr.lastChild);
+				var node = arr.removeChild(arr.children[arr.children.length-1]);
+				alert(node.style.height);
 			}
 		});
+
+		sortBubble.addEventListener('click',function(){
+			var node = arr.children;
+			for(let i=node.length-1;i>=1;i--){
+				for(let j=0;j<i;j++){
+					if(node[j].style.height>node[j+1].style.height){
+						let temp = node[j].style.height;
+						node[j].style.height=node[j+1].style.height;
+						node[j+1].style.height=temp;
+					}
+				}
+			}
+		});
+
+
+
 		function checkValidity(num){
 			if(num>=10 && num<=100){
 				return true;
@@ -101,6 +134,50 @@
 			for(node in nodes){
 				arr.push(node.height);
 				console.log(arr);
+			}
+		}
+		//冒泡排序
+		function es_sort(arr){
+			for(let j=arr.length-1;j>=1;j--){
+				for(let i=0;i+1<=j;i++){
+					if(arr[i]>arr[i+1]){
+						let temp = arr[i];
+						arr[i] = arr[i+1];
+						arr[i+1] = temp;
+					}
+				}
+			}
+		}
+		//直接插入排序
+		function insert_sort(arr){
+			for(let i=1;i<arr.length;i++){
+				let temp = arr[i];
+				for(let j=i-1;j>=0;j--){
+					if(temp<arr[j]){
+						arr[j+1]=a[j];
+					}else{
+						a[j+1]=temp;
+						break;
+					}
+				}
+
+			}
+		}
+
+		function selectSort(arr){
+			let max = arr[0];
+			let index = 0;
+			for(let i=0;i<arr.length;i++){
+				max = arr[i];
+				index = i;
+				for(let j=i+1;j<arr.length;j++){
+					if(max<arr[j]){
+						max=arr[j];
+						index = j;
+					}
+				}
+				a[index]=a[i];
+				a[i]=max;
 			}
 		}
 	
