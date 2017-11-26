@@ -89,35 +89,24 @@ window.onload = function(){
 	function  preTraverse(bt,cur){
 		var curr = cur;
 		console.log(cur);
-		return (function(){
-			//console.log("here");
-			if(bt!==null){
-				curr.appendChild(createElement(bt.data));
-				console.log(bt.data);
-				//出现了.闭包的诅咒
-				/*var temp = curr.children[0];
-				preTraverse(bt.left,temp);
-				preTraverse(bt.right,temp);*/
-				//左右的是不一样的
-				/*一个严重的问题:
-					如果用前序遍历,先生成左节点再生成右节点
-					那么递归的时候,势必要将当前不存在的第二个节点传入
-					使用 promise??
-					还是说可以用层次遍历来解决这个问题
-				*/
-				//var temp =curr.children[0];
-				//console.log(temp.className);
-				preTraverse(bt.left,curr.children[0]);
-				//var temp2 = curr.children[1];
-				preTraverse(bt.right,curr.children[0]);
-			}else{
-				//为简单起见先假设是完全二叉树
-				//如果不是,当左右子树有其一为 null 时才可以设置一个元素替代这个空子树
-				//全部为 null 时结束,不需放置元素
-				return;
-			}
-		})();
-		
+		if(bt!==null){
+			curr.appendChild(createElement(bt.data));
+			console.log(bt.data);
+			/*一个严重的问题:
+				如果用前序遍历,先生成左节点再生成右节点
+				那么递归的时候,势必要将当前不存在的第二个节点传入
+				使用 promise??
+				还是说可以用层次遍历来解决这个问题
+			*/
+			//easy solved .... 修改 index 即可
+			preTraverse(bt.left,curr.children[curr.children.length-1]);
+			preTraverse(bt.right,curr.children[curr.children.length-1]);
+		}else{
+			//为简单起见先假设是完全二叉树
+			//如果不是,当左右子树有其一为 null 时才可以设置一个元素替代这个空子树
+			//全部为 null 时结束,不需放置元素
+			return;
+		}	
 	}
 	function childTraverse(pos,curr){
 		if(pos=="left"){
