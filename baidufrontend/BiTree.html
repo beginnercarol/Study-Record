@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Tree</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	.container{
+		display:flex;
+
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		
+	</div>
+<script type="text/javascript">
+	function Node(data){
+		this.data=data;
+		this.leftChild = null;
+		this.rightChild=null;
+	}
+	function BinaryTree(data){
+		this.root = data;
+		this.insert = function(){};
+	}
+	//传入 bt 的 root 结点
+	function countNodes(bt){
+		var count = 0;
+		/*if(bt.root!=null){
+			var lnodes = checkLeftTree(bt.root.leftChild);
+			
+			var rnodes = checkRightTree(bt.root.rightChild);
+			count = lnodes + rnodes +1;
+		}*/
+		if(bt != null){
+			return countNodes(bt.leftChild) + countNodes(bt.rightChild) + 1;
+		}
+		else{
+			return 0;
+		}
+		return count;
+	}
+	//计算二叉树的深度
+	function countDepth(bt){
+		if(bt !== null){
+			return Math.max(countDepth(bt.leftChild)+1,countDepth(rightChild)+1);
+		}else{
+			return 0;
+		}
+	}
+	//前序遍历二叉树
+	function preTraverse(bt){
+		 if(bt !== null){
+		 	visit(bt);
+		 	preTraverse(bt.leftChild);
+		 	preTraverse(bt.rightChild);
+		 }else{
+		 	return;
+		 }
+	}
+
+	//中序
+	function inTraverse(bt){
+		if(bt !== null){
+			inTraverse(bt.leftChild);
+			visit(bt);
+			inTraverse(bt.rightChild);
+		}else{
+			return;
+		}
+	}
+	//后序
+	function postTraverse(bt){
+		if(bt !== null){
+			postTraverse(bt.leftChild);
+			postTraverse(bt.rightChild);
+			visit(bt);
+		}else{
+			return;
+		}
+	}
+	//分层遍历相当于广度优先遍历,Queue
+	(funciton(){
+		if(bt!==null){
+			var arr = [bt];
+		}
+		while(arr!==null){
+			var node = arr.shift();
+			visit(node);
+			if(node.leftChild!=null){
+				arr.push(ndoe.leftChild);
+			}
+			if(node.rightChild!==null){
+				arr.push(node.rightChild);
+			}	
+		}
+	})();
+	
+	//非递归
+	//前
+	(function(){
+		var arr = [];
+		if(bt!==null){
+			arr.push(bt);
+		}
+		function preTra(bt){
+			
+		}
+	})();
+	
+	//中
+	//后
+
+</script>    
+</body>
+</html>
