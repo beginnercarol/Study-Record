@@ -19,6 +19,36 @@
 		
 	</div>
 <script type="text/javascript">
+//二叉树可以表示为一个对象
+var bt = {
+	data:"A",
+	left:{
+		data:"B",
+		left:{
+			data:"D",
+			left:null,
+			right:null,
+		}
+		right:{
+			data:"E",
+			left:null,
+			right:null,
+		}
+	},
+	right:{
+		data:"C",
+		left:{
+			data:"F",
+			left:null,
+			right:null
+		},
+		right:{
+			data:"G",
+			left:null,
+			right:null,
+		}
+	}
+}
 	function Node(data){
 		this.data=data;
 		this.leftChild = null;
@@ -109,7 +139,7 @@
 			arr.push(bt);
 		}
 		function preTra(bt){
-			
+
 		}
 	})();
 	
