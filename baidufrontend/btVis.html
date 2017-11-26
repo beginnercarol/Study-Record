@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>BinaryTreeVisualization</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	#container{
+		width:80%;
+		padding:20px;
+		display: -webkit-box;
+  		display: -moz-box;
+	  	display: -webkit-flex;
+	  	display: -ms-flexbox;
+	  	display: flex;
+		justify-content:space-around;
+		align-items:stretch;
+		background-color: #9c9c9c;
+
+	}
+	.child{
+		width:40%;
+		display: -webkit-box;
+  		display: -moz-box;
+	  	display: -webkit-flex;
+	  	display: -ms-flexbox;
+	  	display: flex;
+		justify-content:space-around;
+		align-items:stretch;
+		padding:10px;
+		border:2px solid red;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		
+	</div>
+<script type="text/javascript">
+window.onload = function(){
+	var begin = document.getElementById("container");
+	var bt = {
+		data:"A",
+		left:{
+			data:"B",
+			left:{
+				data:"D",
+				left:null,
+				right:null,
+			},
+			right:{
+				data:"E",
+				left:null,
+				right:null,
+			}
+		},
+		right:{
+			data:"C",
+			left:{
+				data:"F",
+				left:null,
+				right:null
+			},
+			right:{
+				data:"G",
+				left:null,
+				right:null,
+			}
+		}
+	}
+	//深度优先 前序遍历
+	/*var arr = [];
+	arr.push(bt);
+	var curr = root;
+	while(arr.length>0){
+		var node = arr.shift();
+		if(node.left!==null){
+			arr.push(node.left);
+		}
+		if(node.right!==null){
+			arr.push(node.right);
+		}
+		curr.appendChild(createElement());
+	}*/
+	var cur = begin;
+	function  preTraverse(bt,cur){
+		var curr = cur;
+		console.log(cur);
+		return (function(){
+			//console.log("here");
+			if(bt!==null){
+				curr.appendChild(createElement(bt.data));
+				console.log(bt.data);
+				//出现了.闭包的诅咒
+				/*var temp = curr.children[0];
+				preTraverse(bt.left,temp);
+				preTraverse(bt.right,temp);*/
+				//左右的是不一样的
+				/*一个严重的问题:
+					如果用前序遍历,先生成左节点再生成右节点
+					那么递归的时候,势必要将当前不存在的第二个节点传入
+					使用 promise??
+					还是说可以用层次遍历来解决这个问题
+				*/
+				//var temp =curr.children[0];
+				//console.log(temp.className);
+				preTraverse(bt.left,curr.children[0]);
+				//var temp2 = curr.children[1];
+				preTraverse(bt.right,curr.children[0]);
+			}else{
+				//为简单起见先假设是完全二叉树
+				//如果不是,当左右子树有其一为 null 时才可以设置一个元素替代这个空子树
+				//全部为 null 时结束,不需放置元素
+				return;
+			}
+		})();
+		
+	}
+	function childTraverse(pos,curr){
+		if(pos=="left"){
+			preTraverse(bt.left,curr.children[0]);
+		}else{
+			preTraverse(bt.right,curr.children[1]);
+		}
+	}
+	function createElement(data){
+		var div = document.createElement("div");
+		div.className = "child" + " " + data;
+		return div;
+	}
+	preTraverse(bt,cur);
+}
+	
+</script>
+</body>
+</html>
