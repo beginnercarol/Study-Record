@@ -32,6 +32,8 @@
 		align-items:stretch;
 		padding:10px;
 		border:2px solid red;
+		background-color: #fff;
+		
 	}
 </style>
 </head>
@@ -71,34 +73,13 @@ window.onload = function(){
 			}
 		}
 	}
-	//深度优先 前序遍历
-	/*var arr = [];
-	arr.push(bt);
-	var curr = root;
-	while(arr.length>0){
-		var node = arr.shift();
-		if(node.left!==null){
-			arr.push(node.left);
-		}
-		if(node.right!==null){
-			arr.push(node.right);
-		}
-		curr.appendChild(createElement());
-	}*/
 	var cur = begin;
 	function  preTraverse(bt,cur){
 		var curr = cur;
-		console.log(cur);
+		//console.log(cur);
 		if(bt!==null){
 			curr.appendChild(createElement(bt.data));
-			console.log(bt.data);
-			/*一个严重的问题:
-				如果用前序遍历,先生成左节点再生成右节点
-				那么递归的时候,势必要将当前不存在的第二个节点传入
-				使用 promise??
-				还是说可以用层次遍历来解决这个问题
-			*/
-			//easy solved .... 修改 index 即可
+			//每一个节点都要将自己(DOM)传给下一个节点,方便节点的插入
 			preTraverse(bt.left,curr.children[curr.children.length-1]);
 			preTraverse(bt.right,curr.children[curr.children.length-1]);
 		}else{
@@ -108,19 +89,88 @@ window.onload = function(){
 			return;
 		}	
 	}
-	function childTraverse(pos,curr){
-		if(pos=="left"){
-			preTraverse(bt.left,curr.children[0]);
-		}else{
-			preTraverse(bt.right,curr.children[1]);
-		}
-	}
+	
 	function createElement(data){
 		var div = document.createElement("div");
 		div.className = "child" + " " + data;
 		return div;
 	}
 	preTraverse(bt,cur);
+
+	//接下来是可视化遍历过程
+	var root = begin.children[0];//root节点
+	//console.log(root);
+	//需要 setInterval??
+	var now = (new Date()).getTime();//toLocaleString();
+		console.log("Begin:",now);
+	function preVisTraverse(bt){
+		if(bt){
+			//这里的 setTimeout 会产生一些奇怪的问题......emmmmmm
+			//promise??
+			setTimeout(delayBg(bt),6000);
+			preVisTraverse(bt.children[0]);
+			preVisTraverse(bt.children[1]);
+		}else{
+			return;
+		}	
+	}
+	function delayBg(bt){
+		console.log("log: ",(new Date()).getTime()-now);
+		return function(){
+			console.log("bg: ",(new Date()).getTime()-now);
+			bt.style.setProperty("background-color","teal");
+			//console.log(bt);
+		};
+	}
+	
+	preVisTraverse(root);
+	
+	function exp(){
+		var now = (new Date()).getTime();//toLocaleString();
+		console.log("Begin:",now);
+		test();
+		console.log((new Date()).getTime()-now);
+		function test(){
+			console.log((new Date()).getTime()-now);
+			setTimeout(function(){console.log("processing");},3000);
+			console.log("End:",(new Date()).getTime()-now);
+		}
+	}
+
+
+	(function(){
+		var now = (new Date()).getTime();//toLocaleString();
+		//console.log("Begin:",now);
+
+		/*async(1,function(value){
+			async(value,function(value){
+				async(value,function(){
+					console.log("end");
+				});
+			});
+		});
+*/
+
+
+
+		function async(args,callback){
+			console.log("Args:"+args+",1s");
+			setTimeout(function(){
+				console.log((new Date()).getTime()-now);
+				callback(args*2);
+			},1000);
+		}
+
+
+
+	})();
+	
+
+	
+
+
+
+
 }
 	
 </script>
