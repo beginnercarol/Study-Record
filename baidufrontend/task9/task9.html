@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Notes</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="task9.css" rel="stylesheet">
+</head>
+<body>
+   <div class="container">
+   	<div class="navbar">
+   		<span>
+	   		<ul>
+	   		<li><input type="text" name="search"></li>
+	   		<li>Login</li>
+	   		</ul>
+   		</span>
+   	</div>
+
+   	<div class="main">
+   		<div class="address">
+   			
+   		</div>
+		<div class="content">
+			<div class="inquire">
+   			<form>
+   				<div class="inqure-1">
+   					<label for="inquire-items"> 查询项</label>
+   					<select id="inquire-items">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   				</div>
+   				<div class="inquire-2">
+   					<label for="buyer">买方</label>
+   					<select id="buyer">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   					<label for="solder">卖方</label>
+   					<select id="solder">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   				</div>
+   				<div class="inquire-3">
+   					<label for="choose-date">日期</label>
+   					<input type="date" id="choose-date"/>
+   					<label for="time">时间</label>
+   					<select id="time">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   					<label for="people">人数</label>
+   					<select id="people">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   					<label for="count"> 项目数</label>
+   					<select id="count">
+   						<option selected> 第一项</option>
+   						<option> 第二项</option>
+   						<option> 第三项</option>
+   					</select>
+   					<button type="submit" value="submit">搜索</button>
+   				</div>
+   			</form>
+			</div><!--/.inquiry-->
+			
+         <div class="slide-content">
+            <div class="arrow left-arrow"></div>
+               <div class="slide-content-info">
+                  <span class="time"></span>
+                  <span class="ampm"></span>
+                  <span class="price"></span>
+               </div>
+            <div class="arrow right-arrow"></div>
+            <div class="history"></div>
+         </div><!--/.slide-content-->
+
+         <div class="statistic-content">
+            <h3 class="title">2016年4月份统计</h3>
+            <div class="flex-content">
+            <div class="statistic">
+               <div class="statistic-info">
+                  <span class="statistic-amount">112223</span>
+                  <br />
+                  <span class="statistic-catogrory">成交量</span>
+               </div>
+               <span class="statistic-img"><img src="../img/bg2.jpg"/></span>
+            </div>
+            <div class="statistic">
+               <div class="statistic-info">
+                  <span class="statistic-amount">112223</span>
+                  <br />
+                  <span class="statistic-catogrory">成交量</span>
+               </div>
+               <span class="statistic-img"><img src="../img/bg2.jpg"/></span>
+            </div>
+            <div class="statistic">
+               <div class="statistic-info">
+                  <span class="statistic-amount">112223</span>
+                  <br />
+                  <span class="statistic-catogrory">成交量</span>
+               </div>
+               <span class="statistic-img"><img src="../img/bg2.jpg"/></span>
+            </div>
+            <div class="statistic">
+               <div class="statistic-info">
+                  <span class="statistic-amount">112223</span>
+                  <br />
+                  <span class="statistic-catogrory">成交量</span>
+               </div>
+               <span class="statistic-img"><img src="../img/bg2.jpg"/></span>
+            </div>
+         </div><!--/.flex-content-->
+         </div><!--/.statistic-content-->
+
+         <div class="project">
+            <div class="project-info">
+               <h3 class="project-code">第一组</h3>
+               <div class="project-content">
+                  
+               </div>   
+            </div>
+            <div class="project-detail">
+               <h3 class="project-code">第一组</h3>
+               <form>
+                  <span class="input-wrapper">
+                      <label for="project-title">标题</label>
+                     <br />
+                     <input id="project-title" type="text" />
+                  </span>
+                 
+                  <!--<table>
+                     <thead>
+                        <tr>
+                           <td>价格</td>
+                           <td colspan="3">负责人</td>
+                        </tr>
+                        </thead> 
+                        <tr>
+                           <td><input type="text" placeholder="$158" /></td>
+                           <td colspan="3"><input type="text" placeholder="A" /></td>
+                        </tr>
+                        <tr >
+                           <td rowspan="3" colspan="4">
+                              <label for="description">描述</label>
+                             <input  id="description" type="textarea" placeholder="描述" />
+                           </td>
+                        </tr>
+                        
+                  </table>-->
+                  <span class="input-wrapper">
+                     <label for="project-price">价格</label>
+                     <br />
+                     <input id="project-price" type="text"></input>
+                  </span>
+                  <span class="input-wrapper">
+                     <label for="project-charger">负责人</label>
+                  <br />
+                  <input id="project-charger" type="text"></input>
+                  </span>
+                  <span class="input-wrapper">
+                     <label for="project-description">描述</label>
+                  <br/>
+                  <input id="project-description" type="textarea"></input>
+                  </span>
+                  
+                  <span class="input-wrapper">
+                     <input id="project-level" type="checkbox" name="secretly" value="yes">
+                     <label for="project-level">遵守保密协议</label>
+                     <button type="submit" value="search">搜索</button>
+                  </span>
+                  
+
+
+
+
+
+
+
+               </form>
+            </div>
+         </div><!--/.project-->
+
+         <div class="other">
+            <div class="calendar">
+                
+            </div><!--/.calendar-->
+            <div class="toplist">
+               
+            </div><!--/.toplist-->
+         </div><!--/.other-->
+		</div>
+   	</div>
+
+
+   	<div class="sidebar">
+   		<div class="personal-info">
+   			<div class="portrait">
+   				<span><img src="../img/bg1.jpg" alt="portrait"/></span>
+   				<div class="user-name">
+					ABCD
+   				</div>
+   			</div>
+   			<div class="info">
+   				<span>
+   					110
+   					<br/>
+   					收藏+
+   				</span>
+   				<span>
+   					313
+   					<br/>
+   					关注+
+   				</span>
+   			</div>
+   		</div>
+   		<div class="folders">
+   			<ul class="folder">
+   				<li class="items">个人报表</li>
+   					<ul class="sub-folder"> 
+   						<li class="items">文件一</li>
+   							<ul class="sub-folder">
+   								<li class="files">文档1</li>
+   								<li class="files">文档2</li>
+   								<li class="files">文档3</li>
+   							</ul>
+   					</ul>
+                  <ul class="sub-folder"> 
+                     <li class="items">文件一</li>
+                        <ul class="sub-folder">
+                           <li class="files">文档1</li>
+                           <li class="files">文档2</li>
+                           <li class="files">文档3</li>
+                        </ul>
+                  </ul>
+   				<li class="items">Collections</li>
+   					<ul class="sub-folder">
+   						<li class="items"></li>
+   					</ul>
+   				<li class="items">Share</li>
+   					<ul class="sub-folder">
+   						<li class="items"></li>
+   					</ul>
+   				<li class="items">Info</li>
+   					<ul class="sub-folder">
+   						<li class="items"></li>
+   					</ul>
+   			</ul>
+   		</div>
+   	</div><!--/.sidebar-->
+   </div> 
+<script type="text/javascript" src="task9.js"></script>
+</body>
+</html>
