@@ -43,6 +43,13 @@
   padding-left: 200px;
   float: left;
   height: 800px; }
+  .main h3 {
+    background-color: #eee;
+    margin: 0;
+    color: #999;
+    font-size: 1rem;
+    font-weight: 1;
+    padding: 10px; }
   .main .content {
     width: 100%;
     padding: 10px 20px;
@@ -81,38 +88,141 @@
           width: 100%;
           height: 100%; }
   .main .project {
-    width: 100%; }
+    width: 100%;
+    font-size: 0;
+    height: 450px; }
     .main .project > div {
       box-shadow: 0 0 2px #999;
+      border-radius: 5px;
       background-color: #fff;
-      padding: 10px; }
+      height: 100%; }
     .main .project .project-info {
-      display: inline-block; }
-    .main .project .project-detail h3 {
-      background-color: #eee;
-      margin: 0;
-      color: #999;
-      font-size: 1rem;
-      font-weight: 1;
-      padding: 10px; }
-    .main .project .project-detail span.input-wrapper {
-      display: inline-block; }
-    .main .project .project-detail label {
-      color: #999;
-      font-size: 1rem;
-      font-weight: 1; }
-    .main .project .project-detail input {
-      border: none;
-      border: 1px solid;
-      border-color: transparent transparent #ccc transparent;
-      outline: none; }
-    .main .project .project-detail form span.input-wrapper:first-of-type {
-      width: 100%; }
-      .main .project .project-detail form span.input-wrapper:first-of-type input {
-        width: 100%; }
-    .main .project .project-detail form span.input-wrapper:nth-of-type(2) {
-      border: 1px solid;
-      border-color: transparent #ccc transparent transparent; }
+      display: inline-block;
+      width: 58%;
+      margin-right: 2%;
+      font-size: 1rem; }
+      .main .project .project-info > div:first-of-type {
+        width: 100%;
+        /*height:100%;*/
+        padding: 20px; }
+      .main .project .project-info div.project-info-list {
+        width: 100%;
+        /*border:2px solid;*/
+        /*border-color:transparent transparent #ccc transparent;*/
+        border-radius: 5px; }
+        .main .project .project-info div.project-info-list ul {
+          list-style: none;
+          margin: 0;
+          padding: 0; }
+          .main .project .project-info div.project-info-list ul li {
+            /*display:inline-block;*/
+            float: left;
+            width: 15%;
+            padding: 5px;
+            border-radius: 5px 5px 0 0;
+            background-color: #eee;
+            margin-right: 5px; }
+      .main .project .project-info div.project-info-content {
+        width: 100%;
+        /*height:100%;*/
+        border: 2px solid;
+        border-color: #ccc;
+        border-radius: 0 5px 5px 5px;
+        padding: 20px; }
+        .main .project .project-info div.project-info-content table {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #ccc;
+          border-collapse: collapse;
+          text-align: center; }
+          .main .project .project-info div.project-info-content table td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            /*border-collapse:collapse;*/ }
+    .main .project .project-detail {
+      display: inline-block;
+      vertical-align: top;
+      width: 40%; }
+      .main .project .project-detail span.input-wrapper {
+        display: inline-block;
+        min-height: 50px;
+        border: none;
+        border: 1px solid;
+        border-color: transparent transparent #ccc transparent;
+        outline: none; }
+      .main .project .project-detail label {
+        color: #999;
+        font-size: 1rem;
+        font-weight: 1; }
+      .main .project .project-detail input {
+        vertical-align: bottom;
+        border: none;
+        border: 1px solid;
+        border-color: transparent transparent transparent transparent;
+        outline: none; }
+      .main .project .project-detail form {
+        font-size: 0; }
+        .main .project .project-detail form .row-1 > span.input-wrapper {
+          width: 100%; }
+        .main .project .project-detail form .row-2 > span.input-wrapper:first-of-type {
+          width: 40%;
+          border-right: 1px solid #ccc; }
+        .main .project .project-detail form .row-2 > span.input-wrapper:last-of-type {
+          width: 60%; }
+        .main .project .project-detail form .row-3 > span.input-wrapper {
+          width: 100%;
+          min-height: 150px;
+          max-height: 200px; }
+        .main .project .project-detail form #project-descriptor {
+          min-height: 150px;
+          _height: 150px;
+          outline: 0;
+          overflow-x: hidden;
+          overflow-y: scroll; }
+        .main .project .project-detail form .row-4 span.input-wrapper {
+          display: inline-block;
+          width: 100%;
+          border: none;
+          padding: 10px; }
+          .main .project .project-detail form .row-4 span.input-wrapper input {
+            margin: 0; }
+          .main .project .project-detail form .row-4 span.input-wrapper input, .main .project .project-detail form .row-4 span.input-wrapper label, .main .project .project-detail form .row-4 span.input-wrapper button {
+            vertical-align: middle;
+            margin-right: 10px; }
+          .main .project .project-detail form .row-4 span.input-wrapper .checkbox-wrapper {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            vertical-align: middle; }
+            .main .project .project-detail form .row-4 span.input-wrapper .checkbox-wrapper .icon {
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: url("../img/icon1.png") no-repeat center/100%; }
+            .main .project .project-detail form .row-4 span.input-wrapper .checkbox-wrapper input#project-level {
+              opacity: 0;
+              width: 16px;
+              height: 16px;
+              position: relative;
+              z-index: 1000; }
+              .main .project .project-detail form .row-4 span.input-wrapper .checkbox-wrapper input#project-level:checked + span.icon {
+                background: url("../img/icon2.png") no-repeat center/100%; }
+          .main .project .project-detail form .row-4 span.input-wrapper label + button {
+            float: right; }
+          .main .project .project-detail form .row-4 span.input-wrapper button {
+            display: inline-block;
+            border: none;
+            background-color: #0277BD;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px; }
+  .main .other {
+    width: 100%; }
+    .main .other .other-calendar select {
+      overflow: scroll; }
 
 .sidebar {
   width: 200px;
