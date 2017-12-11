@@ -3,25 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Exp</title>
+<title>Examples</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
 <style type="text/css">
-	.container{
-  width:50%;
-  background-color:#999;
+  *{
+  box-sizing:border-box;
+}
+.selectWrapper{
+  display:inline-block;
+  width:75px;
+  position:relative;
+  .selec{
+    display:inline-block;
+    overflow:hidden;
+    padding-right:25px;
+    width:100%;
+    height:25px;
+    position:relative;
+    svg{
+      position:absolute;
+      top:0;
+      right:0;
+    }
+  }
+  .options{
+    position:absolute;
+    display:none;
+    width:100%;
+    border-radius:8px;
+    box-shadow:0 0 3px #ccc;
+    .opt{
+      width:100%;
+      height:25px;
+    }
+  }
 }
 
-img{
-  width:200px;
-  vertical-align: baseline;
-}
+
 </style>
 </head>
 <body>
-   <div class="container">
-  <img src="./img/bg5.jpg" alt="pics" />
+
+<div class="selectWrapper">
+  <div class="selec">
+  <span id="showYear"></span>
+  <svg width="24" height="24" viewBox="0 0 24 24">
+  <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"></path>
+</svg>
 </div>
+<div class="options">
+    <div class='opt'>2017</div>
+    <div class='opt'></div>
+    <div class='opt'></div>
+</div>
+</div>
+ 
+<script type="text/javascript">
+var select = document.getElementsByClassName('selec')[0];
+var showTxt = select.querySelector('span#showYear');
+var opt = document.getElementsByClassName('options')[0];
+var date = new Date();
+select.addEventListener('click',function(){
+  opt.innerText = "";
+  let year = date.getFullYear();
+  for(let i=-4;i<5;i++){
+    let node = document.createElement('div');
+    node.className = "opt";
+    node.innerText = year+i;
+    opt.appendChild(node);
+  }
+  opt.style.setProperty('display','inline-block');
+});
+(function(){
+  let year = date.getFullYear();
+  showTxt.innerText = year;
+})();
+
+opt.addEventListener('mousemove',function(e){
+  
+});
+</script> 
 </body>
 </html>

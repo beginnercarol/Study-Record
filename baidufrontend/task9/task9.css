@@ -221,7 +221,7 @@
             font-size: 12px; }
   .main .other {
     width: 100%; }
-    .main .other .other-calendar select {
+    .main .other #other-calendar select {
       overflow: scroll; }
 
 .sidebar {
