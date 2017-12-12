@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+  *{
+  box-sizing:border-box;
+}
+.selectWrapper{
+  display:inline-block;
+  width:75px;
+  position:relative;
+  .selec{
+    display:inline-block;
+    overflow:hidden;
+    padding-right:25px;
+    width:100%;
+    height:25px;
+    position:relative;
+    svg{
+      position:absolute;
+      top:0;
+      right:0;
+    }
+  }
+  .options{
+    position:absolute;
+    display:none;
+    width:100%;
+    border-radius:8px;
+    box-shadow:0 0 3px #ccc;
+    .opt{
+      width:100%;
+      height:25px;
+    }
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="selectWrapper">
+  <div class="selec">
+  <span id="showYear"></span>
+  <svg width="24" height="24" viewBox="0 0 24 24">
+  <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"></path>
+</svg>
+</div>
+<div class="options">
+</div>
+</div>
+ 
+<script type="text/javascript">
+var select = document.getElementsByClassName('selec')[0];
+var showTxt = select.querySelector('span#showYear');
+var opt = document.getElementsByClassName('options')[0];
+// console.log(opt);
+var date = new Date();
+
+select.addEventListener('click',function(){
+  opt.innerText = "";
+  let year = date.getFullYear();
+  for(let i=-4;i<5;i++){
+    let node = document.createElement('div');
+    node.className = "opt";
+    node.innerText = year+i;
+    opt.appendChild(node);
+  }
+  opt.style.setProperty('display','inline-block');
+});
+
+
+function createElement(type,className,text){
+  var node = document.createElement(type);
+  node.className = className;
+  node.innerText = text;
+  return node;
+}
+
+(function(){
+  let year = date.getFullYear();
+  showTxt.innerText = year;
+})();
+
+
+(function(){
+  var posY = [];
+  var intervalId = "";
+  const items = 1;
+  //流程应该是:
+  //click select 之后 opt 弹出,之后如果鼠标进入 opt 则每隔20ms 获取一次坐标
+  //当鼠标离开 opt 就不需要每20ms 获取一次位置了
+  //比较最近几次鼠标位置(只取了 y 方向的坐标)是减少还是增加 即知道鼠标的移动方向
+  // 根据目前比较简单的算法其实是不需要保留所有的 posY 的
+  opt.addEventListener('mouseenter',function(){
+    intervalId = setInterval(setMousemove(opt),20);
+  });
+  opt.addEventListener("mouseleave",function(){
+    if(intervalId !== ""){
+      clearInterval(intervalId);
+      posY = [];//顺便清空 posY
+    }
+  })
+  function setMousemove(target){
+    return function(){
+      target.addEventListener('mousemove',getPos);
+    }
+  }
+  function getPos(e){
+    let y = e.pageY || e.clientY + (document.body.scrollLeft || document.documentElement.scrollLeft);
+    posY.push(y);
+    if(posY.length>1){//必须有可以比较的两个数值
+      changeOpt(findDirection(posY));
+      e.target.removeEventListener('mousemove',getPos);
+    }
+  }
+
+  //比较鼠标移动方向
+  function findDirection(arr){
+    if(arr.length>1){
+      return arr[arr.length-1]-arr[arr.length-2];
+    }
+  }
+  //添加/删除 option 项
+  function changeOpt(dir){
+    var childNodesArr = opt.children;
+    if(dir<0){//鼠标向上移动,则在最后增加 item 删除最上面的 item
+      console.log("opt first child",childNodesArr[0]);
+      opt.removeChild(childNodesArr[0]);
+      console.log("last one",+childNodesArr[childNodesArr.length-1].innerText+1);
+      opt.appendChild(createElement('div',"opt",+childNodesArr[childNodesArr.length-1].innerText+1));
+    }else if(dir>0){//鼠标向下移动
+      opt.removeChild(childNodesArr[childNodesArr.length-1]);
+      opt.insertBefore(createElement('div','opt',+childNodesArr[0].innerText-1),childNodesArr[0]);
+    }
+  }
+
+})();
+
+
+</script> 
+</body>
+</html>
