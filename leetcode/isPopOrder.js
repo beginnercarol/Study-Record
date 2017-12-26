@@ -18,12 +18,13 @@
 	}
 	// console.log(IsPopOrder([1,2,3,4,5],[4,5,2,3,1]));
 })();
+
 //修改版本
 (function(){
 	function IsPopOrder(pushV,popV){
 		var j=0;
 		var stack = [];
-		for(var i=0;i<pushV.length.i++){
+		for(var i=0;i<pushV.length;i++){
 			stack.push(pushV[i]);
 			while(stack.length && (stack[stack.length-1]==popV[j]) && j<popV.length){
 				stack.pop();
