@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	*{
+  box-sizing:border-box;
+}
+.container{
+  position:relative;
+  width:800px;
+  
+}
+.box{
+  width:100px;
+  height:100px;
+  display:inline-block;
+}
+.box1{
+  background-color:#ccc;
+}
+.box2{
+  background-color:coral;
+}
+.box3{
+  background-color:teal;
+}
+.box4{
+  background-color:purple;
+}
+</style>
+</head>
+<body>
+ <div class="container">
+  <div class="boxContainer">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+  </div>
+</div> 
+<script type="text/javascript">
+	var boxes = document.querySelectorAll('.boxContainer .box');
+console.log(boxes);
+for(let i=0;i<boxes.length;i++){
+  let position = {
+    originalX:0,
+    originalY:0,
+    offsetLeft : 0,
+    offsetTop : 0,
+    status : 0,
+  };
+  boxes[i].addEventListener('mousedown',function(event){
+    console.log("nnnnnn");
+    position.status = 1;
+    position.originalX = event.clientX;
+    position.originalY = event.clientY;
+    position.offsetLeft = event.target.offsetLeft;
+    position.offsetTop = event.target.offsetTop;
+    console.log(position);
+  });
+  boxes[i].addEventListener('mousemove',function(event){
+    if(position.status){
+      event.target.style.setProperty('position','absolute');
+      position.endX = event.clientX;
+      position.endY = event.clientY;
+      event.target.style.setProperty('top',position.offsetTop+position.endY-position.originalY+'px');
+      event.target.style.setProperty('left',position.offsetLeft+position.endX-position.originalX+'px');
+    }
+  });
+  boxes[i].addEventListener('mouseup',function(event){
+    position.status = 0;
+    event.target.style.setProperty('position','relative');
+  });
+}
+</script>  
+</body>
+</html>
