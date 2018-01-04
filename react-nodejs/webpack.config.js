@@ -13,13 +13,24 @@ module.exports={
 		rules:[
 			{
 				test:/(\.jsx|\.js)$/,
-				exclude:'./node_modules',
-				use:babel-loader,
+				exclude:/node_modules/,
+				use:'babel-loader',
 			},
 			{
 				test:/(\.css|\.scss)$/,
-				use:style-loader!css-loader!sass-loader,
-			}
+				use:[
+					{
+						loader:'style-loader',
+					},
+					{
+						loader:'css-loader',
+
+					},
+					{
+						loader:'sass-loader',
+					}
+				]
+			},
 		]
 	}
 }
